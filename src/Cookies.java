@@ -1,4 +1,7 @@
-public class Cookies {
+
+ class Cookies {
+
+    //variables and such
     int cookieCount = 0;
     int CookiesPerClick = 1;
     int AutoCookies = 0;
@@ -7,6 +10,7 @@ public class Cookies {
     int Upgrade2Purchases = 0; //First of the "auto clickers" for now possibly will be moved to buildings
     int Upgrade2BaseCost = 100;
 
+    //return for nessicary variables
     public int getCookieCount(){return cookieCount;}
     public int getCookiesPerClick(){return CookiesPerClick;}
     public int getAutoCookies(){return AutoCookies;}

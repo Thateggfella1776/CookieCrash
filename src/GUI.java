@@ -25,11 +25,13 @@ public class GUI implements ActionListener {
     JLabel CurrentCookies;
     JLabel ClickPWR;
     JLabel AutoPWR;
+
     ImageIcon Nummie = new ImageIcon("src/PerfectCookie.png");
+
 
     public GUI() {
 
-        //GUI Update Timer / Refresh Rate
+        //Refresh Timer Creation
         guiUpdate = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 ClickPWR.setText("CPC: "+logic.getCookiesPerClick());
@@ -43,7 +45,7 @@ public class GUI implements ActionListener {
         updateTimer = new Timer(500,guiUpdate);
         updateTimer.start();
 
-        //Clicks Per Second Timer
+        //Cookiespersecond Timer Creation
         CPSTimerUpdate = new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 logic.AutoClick();
@@ -52,7 +54,7 @@ public class GUI implements ActionListener {
         CPSTimer = new Timer(1000,CPSTimerUpdate);
 
 
-        //Save & Load Buttons
+        //Save/Load Button Creation
         SaveGameButton = new JButton("Save Game");
         Object[] SaveOptions = {"Yes, please",
                 "No, thanks",};
@@ -92,10 +94,10 @@ public class GUI implements ActionListener {
         });
 
         //Upgrade Buttons
-        Upgrade1Button = new JButton("Upgrade (+1 CPC) | Cost: "+logic.getUpgrade1Cost()+" Cookies");
+        Upgrade1Button = new JButton("Upgrade (+1 CPC) | Cost: "+logic.getUpgrade1Cost()+" Cookies | Owned: "+logic.getUpgrade1Purchases());
         Upgrade1Button.addActionListener(e -> {
             if(logic.buyUpgrade1()==true){
-                Upgrade1Button.setText("Upgrade (+1 CPC) | Cost: "+logic.getUpgrade1Cost()+" Cookies");
+                Upgrade1Button.setText("Upgrade (+1 CPC) | Cost: "+logic.getUpgrade1Cost()+" Cookies | Owned: "+logic.getUpgrade1Purchases()+"");
             }else{
                 JOptionPane.showMessageDialog(frame,
                         "Not enough cookies! You need " + logic.getUpgrade1Cost() + " cookies.",
@@ -103,10 +105,10 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE); //Source: https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html
             }
         });
-        Upgrade2Button = new JButton("Upgrade (+1 CPS) | Cost: "+logic.getUpgrade2Cost()+" Cookies");
+        Upgrade2Button = new JButton("Upgrade (+1 CPS) | Cost: "+logic.getUpgrade2Cost()+" Cookies | Owned: "+logic.getUpgrade2Purchases());
         Upgrade2Button.addActionListener(e -> {
             if(logic.buyUpgrade2()==true){
-                Upgrade2Button.setText("Upgrade (+1 CPS) | Cost: "+logic.getUpgrade2Cost()+" Cookies");
+                Upgrade2Button.setText("Upgrade (+1 CPS) | Cost: "+logic.getUpgrade2Cost()+" Cookies | Owned: "+logic.getUpgrade2Purchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
                         "Not enough cookies! You need " + logic.getUpgrade2Cost() + " cookies.",
@@ -158,6 +160,8 @@ public class GUI implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
+
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
