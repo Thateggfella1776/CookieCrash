@@ -1,5 +1,8 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
- class Cookies {
+class Cookies {
 
     //variables and such
     int cookieCount = 0;
@@ -56,5 +59,16 @@
             return true;
         }
         return false;
+        }
+
+    //Save Function, Source:https://www.youtube.com/shorts/MvzzBvbiwjk?feature=share
+    public void SaveToFile(){
+        try {
+            BufferedWriter SaveFile = new BufferedWriter(new FileWriter("save.txt",false));
+            SaveFile.write("This is a work in progress thank you for your understanding.\nHave a cookie");
+            SaveFile.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

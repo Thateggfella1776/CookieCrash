@@ -3,8 +3,10 @@ import java.awt.*;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class GUI implements ActionListener {
+    File save = new File("save.txt");
     Timer updateTimer;
     Timer CPSTimer;
     ActionListener guiUpdate;
@@ -52,14 +54,38 @@ public class GUI implements ActionListener {
         SaveGameButton = new JButton("Save Game");
         Object[] SaveOptions = {"Yes, please",
                 "No, thanks",};
-        SaveGameButton.addActionListener(_ -> JOptionPane.showOptionDialog(frame,
-                "Would you like to save your current game data?",
-                "Save Game?",
-                JOptionPane.YES_NO_CANCEL_OPTION,
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                SaveOptions,
-                SaveOptions[0]));
+        SaveGameButton.addActionListener(_ ->{
+            int SaveChoice=JOptionPane.showOptionDialog(frame,
+                    "Would you like to save your current game data?",
+                    "Save Game?",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    SaveOptions,
+                    SaveOptions[0]);
+
+            if(save.exists()){  //Source: https://www.w3schools.com/java/java_files.asp
+                    if(SaveChoice==JOptionPane.YES_OPTION) {
+                        Object[] ConfirmOptions = {"Pretty Sure",
+                                "I take It Back",};
+                        int AreYouSure = JOptionPane.showOptionDialog(frame,
+                                "Would you like to overwrite your previous save?",
+                                "Overwrite Save?",
+                                JOptionPane.YES_NO_CANCEL_OPTION,
+                                JOptionPane.QUESTION_MESSAGE,
+                                null,
+                                ConfirmOptions,
+                                ConfirmOptions[0]);
+
+                        if (AreYouSure == JOptionPane.YES_OPTION) {
+                            logic.SaveToFile();
+                        }
+                    }
+                    }else{
+                logic.SaveToFile();
+            }
+        });
+
         LoadGameButton = new JButton("Load Game");
         Object[] LoadOptions = {"Yes, please",
                 "No, thanks",};
