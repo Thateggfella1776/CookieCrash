@@ -10,7 +10,7 @@
     int Upgrade2Purchases = 0; //First of the "auto clickers" for now possibly will be moved to buildings
     int Upgrade2BaseCost = 100;
 
-    //return for nessicary variables
+    //return for necessary variables
     public int getCookieCount(){return cookieCount;}
     public int getCookiesPerClick(){return CookiesPerClick;}
     public int getAutoCookies(){return AutoCookies;}

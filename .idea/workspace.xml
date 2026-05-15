@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="Fixed UI so its not so sloppy, added auto click upgrade, began creation of save/load components">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cookies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cookies.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
     </list>
@@ -91,6 +92,7 @@
       <workItem from="1778444770648" duration="6133000" />
       <workItem from="1778453942902" duration="59000" />
       <workItem from="1778718094848" duration="6481000" />
+      <workItem from="1778805093081" duration="1936000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed UI so its not so sloppy, added auto click upgrade, began creation of save/load components">
       <option name="closed" value="true" />

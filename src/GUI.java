@@ -32,25 +32,19 @@ public class GUI implements ActionListener {
     public GUI() {
 
         //Refresh Timer Creation
-        guiUpdate = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                ClickPWR.setText("CPC: "+logic.getCookiesPerClick());
-                CurrentCookies.setText("Cookies: "+logic.getCookieCount());
-                AutoPWR.setText("CPS: " +logic.getAutoCookies());
-                if(logic.getAutoCookies()>0){
-                    CPSTimer.start();
-                }
+        guiUpdate = _ -> {
+            ClickPWR.setText("CPC: "+logic.getCookiesPerClick());
+            CurrentCookies.setText("Cookies: "+logic.getCookieCount());
+            AutoPWR.setText("CPS: " +logic.getAutoCookies());
+            if(logic.getAutoCookies()>0){
+                CPSTimer.start();
             }
         };
         updateTimer = new Timer(500,guiUpdate);
         updateTimer.start();
 
         //Cookiespersecond Timer Creation
-        CPSTimerUpdate = new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                logic.AutoClick();
-            }
-        };
+        CPSTimerUpdate = _ -> logic.AutoClick();
         CPSTimer = new Timer(1000,CPSTimerUpdate);
 
 
@@ -58,29 +52,25 @@ public class GUI implements ActionListener {
         SaveGameButton = new JButton("Save Game");
         Object[] SaveOptions = {"Yes, please",
                 "No, thanks",};
-        SaveGameButton.addActionListener(e -> {
-            JOptionPane.showOptionDialog(frame,
-                    "Would you like to save your current game data?",
-                    "Save Game?",
-                    JOptionPane.YES_NO_CANCEL_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    SaveOptions,
-                    SaveOptions[0]);
-        });
+        SaveGameButton.addActionListener(_ -> JOptionPane.showOptionDialog(frame,
+                "Would you like to save your current game data?",
+                "Save Game?",
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                SaveOptions,
+                SaveOptions[0]));
         LoadGameButton = new JButton("Load Game");
         Object[] LoadOptions = {"Yes, please",
                 "No, thanks",};
-        LoadGameButton.addActionListener(e -> {
-            JOptionPane.showOptionDialog(frame,
-                    "Would you like to load your previous game data?",
-                    "Load Game?",
-                    JOptionPane.YES_NO_CANCEL_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    LoadOptions,
-                    LoadOptions[0]);
-        });
+        LoadGameButton.addActionListener(_ -> JOptionPane.showOptionDialog(frame,
+                "Would you like to load your previous game data?",
+                "Load Game?",
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                LoadOptions,
+                LoadOptions[0]));
 
         //Cookie Button Creation & Modification
         cookieButton = new JButton(Nummie);
@@ -88,16 +78,16 @@ public class GUI implements ActionListener {
         cookieButton.setContentAreaFilled(false);
         cookieButton.setOpaque(false);
         cookieButton.setPreferredSize(new Dimension(512,512));
-        cookieButton.addActionListener(e -> {
+        cookieButton.addActionListener(_ -> {
             logic.Click();
             CurrentCookies.setText("Cookies: "+logic.getCookieCount());
         });
 
         //Upgrade Buttons
         Upgrade1Button = new JButton("Upgrade (+1 CPC) | Cost: "+logic.getUpgrade1Cost()+" Cookies | Owned: "+logic.getUpgrade1Purchases());
-        Upgrade1Button.addActionListener(e -> {
-            if(logic.buyUpgrade1()==true){
-                Upgrade1Button.setText("Upgrade (+1 CPC) | Cost: "+logic.getUpgrade1Cost()+" Cookies | Owned: "+logic.getUpgrade1Purchases()+"");
+        Upgrade1Button.addActionListener(_ -> {
+            if(logic.buyUpgrade1()){
+                Upgrade1Button.setText("Upgrade (+1 CPC) | Cost: "+logic.getUpgrade1Cost()+" Cookies | Owned: "+logic.getUpgrade1Purchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
                         "Not enough cookies! You need " + logic.getUpgrade1Cost() + " cookies.",
@@ -106,8 +96,8 @@ public class GUI implements ActionListener {
             }
         });
         Upgrade2Button = new JButton("Upgrade (+1 CPS) | Cost: "+logic.getUpgrade2Cost()+" Cookies | Owned: "+logic.getUpgrade2Purchases());
-        Upgrade2Button.addActionListener(e -> {
-            if(logic.buyUpgrade2()==true){
+        Upgrade2Button.addActionListener(_ -> {
+            if(logic.buyUpgrade2()){
                 Upgrade2Button.setText("Upgrade (+1 CPS) | Cost: "+logic.getUpgrade2Cost()+" Cookies | Owned: "+logic.getUpgrade2Purchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
