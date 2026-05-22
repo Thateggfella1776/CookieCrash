@@ -52,8 +52,8 @@ public class GUI implements ActionListener {
         guiUpdate = _ -> {
             ClickPWR.setText("CPC: "+ BuildingLogic.getCookiesPerClick());
             CurrentCookies.setText("Cookies: "+ BuildingLogic.getCookieCount());
-            AutoPWR.setText("CPS: " + BuildingLogic.getAutoCookies());
-            if(BuildingLogic.getAutoCookies()>0&&!CookiesOn){
+            AutoPWR.setText("CPS: " + BuildingLogic.getCookiesPerSecond());
+            if(BuildingLogic.getCookiesPerSecond()>0&&!CookiesOn){
                 BuildingLogic.AutoTimer();
                 CookiesOn=true;
             }
@@ -135,10 +135,10 @@ public class GUI implements ActionListener {
         });
 
         //Upgrade Buttons
-        Upgrade1Button = new JButton("Upgrade (+1 CPC) | Cost: "+ BuildingLogic.getBuilding1Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding1Purchases());
+        Upgrade1Button = new JButton("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getBuilding1Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding1Purchases());
         Upgrade1Button.addActionListener(_ -> {
             if(BuildingLogic.buyUpgrade1()){
-                Upgrade1Button.setText("Upgrade (+1 CPC) | Cost: "+ BuildingLogic.getBuilding1Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding1Purchases());
+                Upgrade1Button.setText("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getBuilding1Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding1Purchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
                         "Not enough cookies! You need " + BuildingLogic.getBuilding1Cost() + " cookies.",
@@ -164,7 +164,7 @@ public class GUI implements ActionListener {
         //Label Creation
         CurrentCookies = new JLabel("Cookies: "+ BuildingLogic.getCookieCount());
         ClickPWR = new JLabel("CPC: "+ BuildingLogic.getCookiesPerClick());
-        AutoPWR = new JLabel("CPS: " + BuildingLogic.getAutoCookies());
+        AutoPWR = new JLabel("CPS: " + BuildingLogic.getCookiesPerSecond());
 
         //Panel Creation
         OptionsPanel = new JPanel();

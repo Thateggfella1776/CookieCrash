@@ -12,7 +12,7 @@ public class Logic {
             BufferedWriter SaveFile = new BufferedWriter(new FileWriter("save.txt",false));
             SaveFile.write("Current Cookies: "+BuildingLogic.getCookieCount()+
                     "\nCookies per click: "+BuildingLogic.getCookiesPerClick()+
-                    "\nAuto Cookies: "+BuildingLogic.getAutoCookies()+
+                    "\nAuto Cookies: "+BuildingLogic.getCookiesPerSecond()+
                     "\nBuilding 1 purchases: "+BuildingLogic.getBuilding1Purchases()+
                     "\nBuilding 2 purchases: "+BuildingLogic.getBuilding2Purchases()+
                     "\nHave a cookie");

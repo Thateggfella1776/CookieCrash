@@ -5,5 +5,3 @@ public class Main {
         new GUI();
     }
 }
-
-//Sergei Commit test.

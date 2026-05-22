@@ -5,21 +5,21 @@ import java.util.Timer;
 public class Buildings {
 
     //variables and such
-    int cookieCount = 0;
-    int CookiesPerClick = 1;
-    int AutoCookies = 0;
+    Double cookieCount = 0.0;
+    Double CookiesPerClick = 1.0;
+    Double CookiesPerSecond = 0.0;
     int Building1Purchases = 0;
     int Building1BaseCost = 15;
-    int Building2Purchases = 0; // The first of the "auto clickers" for now possibly will be moved to buildings
+    int Building2Purchases = 0;
     int Building2BaseCost = 100;
     Timer CPSTimer = new Timer();
 
 
 
     //return for necessary variables
-    public int getCookieCount(){return cookieCount;}
-    public int getCookiesPerClick(){return CookiesPerClick;}
-    public int getAutoCookies(){return AutoCookies;}
+    public Double getCookieCount(){return cookieCount;}
+    public Double getCookiesPerClick(){return CookiesPerClick;}
+    public Double getCookiesPerSecond(){return CookiesPerSecond;}
     public int getBuilding1Purchases(){return Building1Purchases;}
     public int getBuilding2Purchases(){return Building2Purchases;}
 
@@ -31,7 +31,7 @@ public class Buildings {
         CPSTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                cookieCount+=AutoCookies;
+                cookieCount+= CookiesPerSecond;
             }
         },0,1000);
     }
@@ -47,7 +47,7 @@ public class Buildings {
         if(cookieCount>=cost){
             cookieCount-=cost;
             Building2Purchases++;
-            AutoCookies++;
+            CookiesPerSecond++;
             return true;
         }
         return false;
@@ -64,7 +64,7 @@ public class Buildings {
         if(cookieCount>=cost){
             cookieCount-=cost;
             Building1Purchases++;
-            CookiesPerClick++;
+            CookiesPerSecond=CookiesPerSecond+0.5;
             return true;
         }
         return false;
