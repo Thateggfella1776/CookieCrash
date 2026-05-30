@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="Fixed some errors with upgrade 17-20">
+    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="Renamed all upgrades and stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +152,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780114256861</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed some errors with upgrade 17-20">
+      <option name="closed" value="true" />
+      <created>1780116277466</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1780116277466</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Renamed all upgrades and stuff">
+      <option name="closed" value="true" />
+      <created>1780116516863</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780116516863</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +180,8 @@
     <MESSAGE value="Began working on saving function Its a work in progress, but now the button does some stuff" />
     <MESSAGE value="Added in all 20 upgrades, implemented BigInteger and stuff, Save&amp;Load System fully works, begining work on upgrades" />
     <MESSAGE value="Fixed some errors with upgrade 17-20" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed some errors with upgrade 17-20" />
+    <MESSAGE value="Fixed some errors with upgrade 17-20 and renamed them all" />
+    <MESSAGE value="Renamed all upgrades and stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed all upgrades and stuff" />
   </component>
 </project>

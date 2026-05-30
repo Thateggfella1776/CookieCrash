@@ -16,26 +16,26 @@ public class Logic {
        String text = "Cookie Count:"+BuildingLogic.getCookieCount()+"\n"
                +"Cookies Per Click:"+BuildingLogic.getCookiesPerClick()+"\n"
                +"Cookies Per Second:"+BuildingLogic.getCookiesPerSecond()+"\n"
-               +"Building 1 Purchases:"+BuildingLogic.getCursorPurchases()+"\n"
-               +"Building 2 Purchases:"+BuildingLogic.getGrandmaPurchases()+"\n"
-               +"Building 3 Purchases:"+BuildingLogic.getFarmPurchases()+"\n"
-               +"Building 4 Purchases:"+BuildingLogic.getMinePurchases()+"\n"
-               +"Building 5 Purchases:"+BuildingLogic.getFactoryPurchases()+"\n"
-               +"Building 6 Purchases:"+BuildingLogic.getBankPurchases()+"\n"
-               +"Building 7 Purchases:"+BuildingLogic.getTemplePurchases()+"\n"
-               +"Building 8 Purchases:"+BuildingLogic.getWizardTowerPurchases()+"\n"
-               +"Building 9 Purchases:"+BuildingLogic.getShipmentPurchases()+"\n"
-               +"Building 10 Purchases:"+BuildingLogic.getAlchemyLabPurchases()+"\n"
-               +"Building 11 Purchases:"+BuildingLogic.getPortalPurchases()+"\n"
-               +"Building 12 Purchases:"+BuildingLogic.getTimeMachinePurchases()+"\n"
-               +"Building 13 Purchases:"+BuildingLogic.getAntimatterCondenserPurchases()+"\n"
-               +"Building 14 Purchases:"+BuildingLogic.getPrismPurchases()+"\n"
-               +"Building 15 Purchases:"+BuildingLogic.getChancemakerPurchases()+"\n"
-               +"Building 16 Purchases:"+BuildingLogic.getFractalEnginePurchases()+"\n"
-               +"Building 17 Purchases:"+BuildingLogic.getJavaConsolePurchases()+"\n"
-               +"Building 18 Purchases:"+BuildingLogic.getIdleversePurchases()+"\n"
-               +"Building 19 Purchases:"+BuildingLogic.getCortexBakerPurchases()+"\n"
-               +"Building 20 Purchases:"+BuildingLogic.getYouPurchases()+"\n"
+               +"Cursor Purchases:"+BuildingLogic.getCursorPurchases()+"\n"
+               +"Grandma Purchases:"+BuildingLogic.getGrandmaPurchases()+"\n"
+               +"Farm Purchases:"+BuildingLogic.getFarmPurchases()+"\n"
+               +"Mine Purchases:"+BuildingLogic.getMinePurchases()+"\n"
+               +"Factory Purchases:"+BuildingLogic.getFactoryPurchases()+"\n"
+               +"Bank Purchases:"+BuildingLogic.getBankPurchases()+"\n"
+               +"Temple Purchases:"+BuildingLogic.getTemplePurchases()+"\n"
+               +"Wizard Tower Purchases:"+BuildingLogic.getWizardTowerPurchases()+"\n"
+               +"Shipment Purchases:"+BuildingLogic.getShipmentPurchases()+"\n"
+               +"Alchemy Lab Purchases:"+BuildingLogic.getAlchemyLabPurchases()+"\n"
+               +"Portal Purchases:"+BuildingLogic.getPortalPurchases()+"\n"
+               +"Time Machine Purchases:"+BuildingLogic.getTimeMachinePurchases()+"\n"
+               +"Antimatter Condenser Purchases:"+BuildingLogic.getAntimatterCondenserPurchases()+"\n"
+               +"Prism Purchases:"+BuildingLogic.getPrismPurchases()+"\n"
+               +"Chancemaker Purchases:"+BuildingLogic.getChancemakerPurchases()+"\n"
+               +"Fractal Engine Purchases:"+BuildingLogic.getFractalEnginePurchases()+"\n"
+               +"Java Console Purchases:"+BuildingLogic.getJavaConsolePurchases()+"\n"
+               +"Idleverse Purchases:"+BuildingLogic.getIdleversePurchases()+"\n"
+               +"Cortex Baker Purchases:"+BuildingLogic.getCortexBakerPurchases()+"\n"
+               +"You Purchases:"+BuildingLogic.getYouPurchases()+"\n"
                +"Have a Cookie!";
        Files.writeString(Path.of("save.txt"),text);
    }
@@ -58,64 +58,64 @@ public class Logic {
                 case "Cookies Per Second":
                     BuildingLogic.CookiesPerSecond = num;
                     break;
-                case "Building 1 Purchases":
+                case "Cursor Purchases":
                     BuildingLogic.CursorPurchases = num.intValue();
                     break;
-                case "Building 2 Purchases":
+                case "Grandma Purchases":
                     BuildingLogic.GrandmaPurchases = num.intValue();
                     break;
-                case "Building 3 Purchases":
+                case "Farm Purchases":
                     BuildingLogic.FarmPurchases = num.intValue();
                     break;
-                case "Building 4 Purchases":
+                case "Mine Purchases":
                     BuildingLogic.MinePurchases = num.intValue();
                     break;
-                case "Building 5 Purchases":
+                case "Factory Purchases":
                     BuildingLogic.FactoryPurchases = num.intValue();
                     break;
-                case "Building 6 Purchases":
+                case "Bank Purchases":
                     BuildingLogic.BankPurchases = num.intValue();
                     break;
-                case "Building 7 Purchases":
+                case "Temple Purchases":
                     BuildingLogic.TemplePurchases = num.intValue();
                     break;
-                case "Building 8 Purchases":
+                case "Wizard Tower Purchases":
                     BuildingLogic.WizardTowerPurchases = num.intValue();
                     break;
-                case "Building 9 Purchases":
+                case "Shipment Purchases":
                     BuildingLogic.ShipmentPurchases = num.intValue();
                     break;
-                case "Building 10 Purchases":
+                case "Alchemy Lab Purchases":
                     BuildingLogic.AlchemyLabPurchases = num.intValue();
                     break;
-                case "Building 11 Purchases":
+                case "Portal Purchases":
                     BuildingLogic.PortalPurchases = num.intValue();
                     break;
-                case "Building 12 Purchases":
+                case "Time Machine Purchases":
                     BuildingLogic.TimeMachinePurchases = num.intValue();
                     break;
-                case "Building 13 Purchases":
+                case "Antimatter Condenser Purchases":
                     BuildingLogic.AntimatterCondenserPurchases = num.intValue();
                     break;
-                case "Building 14 Purchases":
+                case "Prism Purchases":
                     BuildingLogic.PrismPurchases = num.intValue();
                     break;
-                case "Building 15 Purchases":
+                case "Chancemaker Purchases":
                     BuildingLogic.ChancemakerPurchases = num.intValue();
                     break;
-                case "Building 16 Purchases":
+                case "Fractal Engine Purchases":
                     BuildingLogic.FractalEnginePurchases = num.intValue();
                     break;
-                case "Building 17 Purchases":
+                case "Java Console Purchases":
                     BuildingLogic.JavaConsolePurchases = num.intValue();
                     break;
-                case "Building 18 Purchases":
+                case "Idleverse Purchases":
                     BuildingLogic.IdleversePurchases = num.intValue();
                     break;
-                case "Building 19 Purchases":
+                case "Cortex Baker Purchases":
                     BuildingLogic.CortexBakerPurchases = num.intValue();
                     break;
-                case "Building 20 Purchases":
+                case "You Purchases":
                     BuildingLogic.YouPurchases = num.intValue();
                     break;
                 default:
