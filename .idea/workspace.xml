@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="more upgrade fixes and updates">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings.java" afterDir="false" />
-    </list>
+    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="more upgrade fixes and updates" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +119,7 @@
       <workItem from="1778718094848" duration="6481000" />
       <workItem from="1778805093081" duration="7434000" />
       <workItem from="1778890966812" duration="6177000" />
-      <workItem from="1780156622658" duration="1354000" />
+      <workItem from="1780156622658" duration="2214000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed UI so its not so sloppy, added auto click upgrade, began creation of save/load components">
       <option name="closed" value="true" />
@@ -205,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780157558146</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="more upgrade fixes and updates">
+      <option name="closed" value="true" />
+      <created>1780158239683</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1780158239683</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
