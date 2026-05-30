@@ -1,4 +1,10 @@
-import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Logic {
    Buildings BuildingLogic;
@@ -7,30 +13,37 @@ public class Logic {
    }
 
     //Save Function, Source:https://www.youtube.com/shorts/MvzzBvbiwjk?feature=share
-    public void SaveToFile(){
-        try {
-            BufferedWriter SaveFile = new BufferedWriter(new FileWriter("save.txt",false));
-            SaveFile.write("Current Cookies: "+BuildingLogic.getCookieCount()+
-                    "\nCookies per click: "+BuildingLogic.getCookiesPerClick()+
-                    "\nAuto Cookies: "+BuildingLogic.getCookiesPerSecond()+
-                    "\nBuilding 1 purchases: "+BuildingLogic.getBuilding1Purchases()+
-                    "\nBuilding 2 purchases: "+BuildingLogic.getBuilding2Purchases()+
-                    "\nHave a cookie");
-            SaveFile.close();
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-    }
+    public void SaveToFile() throws IOException{
+       String text = "Cookie Count:"+BuildingLogic.getCookieCount()+"\n"
+               +"Cookies Per Click:"+BuildingLogic.getCookiesPerClick()+"\n"
+               +"Cookies Per Second:"+BuildingLogic.getCookiesPerSecond()+"\n"
+               +"Building 1 Purchases:"+BuildingLogic.getBuilding1Purchases()+"\n"
+               +"Building 2 Purchases:"+BuildingLogic.getBuilding2Purchases()+"\n"
+               +"Have a Cookie!";
+       Files.writeString(Path.of("save.txt"),text);
+   }
 
     //Load Function, Source: https://www.w3schools.com/java/java_bufferedreader.asp
-    public void LoadFromFile(){
-        try(BufferedReader SaveReader = new BufferedReader(new FileReader("save.txt"))){
-            String line;
-            while((line = SaveReader.readLine())!=null){
-                System.out.println(line);
+    public void LoadFromFile() throws IOException{
+        Scanner LoadReader = new Scanner(Paths.get("save.txt"));
+        String test = LoadReader.nextLine();
+        String identifier = test.split(":")[0];
+
+        while (LoadReader.hasNextLine()) {
+            double num = Double.valueOf(test.split(":")[1]);
+            if(identifier.equals("Cookie Count")){
+                BuildingLogic.cookieCount = num;
+            }else if(identifier.equals("Cookies Per Click")){
+                BuildingLogic.CookiesPerClick = num;
+            }else if(identifier.equals("Cookies Per Second")){
+                    BuildingLogic.CookiesPerSecond = num;
+            }else if(identifier.equals("Building 1 Purchases")){
+                    BuildingLogic.Building1Purchases = (int)num;
+            }else if(identifier.equals("Building 2 Purchases")) {
+                BuildingLogic.Building2Purchases = (int)num;
             }
-        }catch(IOException e){
-            e.printStackTrace();
+            test = LoadReader.nextLine();
+            identifier=test.split(":")[0];
         }
     }
 }

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Cookie Crash:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Cookie_Crash_jar</output-path>
+    <root id="archive" name="Cookie Crash.jar">
+      <element id="module-output" name="Cookie Crash" />
+    </root>
+  </artifact>
+</component>

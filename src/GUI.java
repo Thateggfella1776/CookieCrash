@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 
 public class GUI implements ActionListener {
 
@@ -31,6 +32,7 @@ public class GUI implements ActionListener {
 
     //Panels
     JPanel MegaPanel = new JPanel();
+    JPanel UpgradesBuildings;
     JPanel OptionsPanel;
     JPanel CookiePanel;
     JPanel UpgradesPanel;
@@ -53,6 +55,8 @@ public class GUI implements ActionListener {
             ClickPWR.setText("CPC: "+ BuildingLogic.getCookiesPerClick());
             CurrentCookies.setText("Cookies: "+ BuildingLogic.getCookieCount());
             AutoPWR.setText("CPS: " + BuildingLogic.getCookiesPerSecond());
+            Upgrade1Button.setText("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getBuilding1Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding1Purchases());
+            Upgrade2Button.setText("Upgrade (+1 CPS) | Cost: "+ BuildingLogic.getBuilding2Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding2Purchases());
             if(BuildingLogic.getCookiesPerSecond()>0&&!CookiesOn){
                 BuildingLogic.AutoTimer();
                 CookiesOn=true;
@@ -90,11 +94,19 @@ public class GUI implements ActionListener {
                             ConfirmOptions[0]);
 
                     if (OverwriteCheck == JOptionPane.YES_OPTION) {
-                        GameLogic.SaveToFile();
+                        try {
+                            GameLogic.SaveToFile();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 }
             }else{
-                GameLogic.SaveToFile();
+                try {
+                    GameLogic.SaveToFile();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -113,7 +125,11 @@ public class GUI implements ActionListener {
 
             if (LoadSelection==JOptionPane.YES_OPTION){
                 if(save.exists()){
-                    GameLogic.LoadFromFile();
+                    try {
+                        GameLogic.LoadFromFile();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }else{
                     JOptionPane.showMessageDialog(frame,
                             "No save file found!",
@@ -167,6 +183,7 @@ public class GUI implements ActionListener {
         AutoPWR = new JLabel("CPS: " + BuildingLogic.getCookiesPerSecond());
 
         //Panel Creation
+        UpgradesBuildings = new JPanel();
         OptionsPanel = new JPanel();
         CookiePanel = new JPanel();
         UpgradesPanel = new JPanel();
@@ -180,6 +197,7 @@ public class GUI implements ActionListener {
         CookiePanel.setBackground(myColor);
         UpgradesPanel.setBackground(myColor);
         OptionsPanel.setBackground(myColor);
+        UpgradesBuildings.setBackground(myColor);
 
         //Panel Packing
         OptionsPanel.add(SaveGameButton);
@@ -187,6 +205,7 @@ public class GUI implements ActionListener {
         CookiePanel.add(cookieButton);
         UpgradesPanel.add(Upgrade1Button);
         UpgradesPanel.add(Upgrade2Button);
+        UpgradesBuildings.add(UpgradesPanel, BorderLayout.SOUTH);
         StatsPanel.add(CurrentCookies);
         StatsPanel.add(ClickPWR);
         StatsPanel.add(AutoPWR);
@@ -196,7 +215,7 @@ public class GUI implements ActionListener {
         //Frame Packing
         frame.add(MegaPanel, BorderLayout.CENTER);
         frame.add(OptionsPanel, BorderLayout.NORTH);
-        frame.add(UpgradesPanel, BorderLayout.EAST);
+        frame.add(UpgradesBuildings, BorderLayout.EAST);
         frame.setIconImage(Nummie.getImage());
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
