@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="Renamed all upgrades and stuff">
+    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="more upgrade fixes and updates">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +123,7 @@
       <workItem from="1778718094848" duration="6481000" />
       <workItem from="1778805093081" duration="7434000" />
       <workItem from="1778890966812" duration="6177000" />
-      <workItem from="1780156622658" duration="725000" />
+      <workItem from="1780156622658" duration="1354000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed UI so its not so sloppy, added auto click upgrade, began creation of save/load components">
       <option name="closed" value="true" />
@@ -197,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780116950124</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="more upgrade fixes and updates">
+      <option name="closed" value="true" />
+      <created>1780157558146</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1780157558146</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +219,7 @@
     <MESSAGE value="Fixed some errors with upgrade 17-20" />
     <MESSAGE value="Fixed some errors with upgrade 17-20 and renamed them all" />
     <MESSAGE value="Renamed all upgrades and stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed all upgrades and stuff" />
+    <MESSAGE value="more upgrade fixes and updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="more upgrade fixes and updates" />
   </component>
 </project>

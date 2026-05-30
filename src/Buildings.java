@@ -290,7 +290,7 @@ public class Buildings {
         return false;
     }
 
-    public BigDecimal getJavaConsoleCost(){return new BigDecimal(JavaConsoleBaseCost.multiply(BigDecimal.valueOf((1.15).pow(JavaConsolePurchases)));}
+    public BigDecimal getJavaConsoleCost(){return new BigDecimal(JavaConsoleBaseCost).multiply(BigDecimal.valueOf(1.15).pow(JavaConsolePurchases));}
     public boolean buyJavaConsole(){
         BigDecimal cost = getJavaConsoleCost();
         if(cookieCount.compareTo(cost)>=0){
@@ -302,7 +302,7 @@ public class Buildings {
         return false;
     }
 
-    public BigDecimal getIdleverseCost(){return new BigDecimal(IdleverseBaseCost.multiply(BigDecimal.valueOf((1.15).pow(IdleversePurchases)));}
+    public BigDecimal getIdleverseCost(){return new BigDecimal(IdleverseBaseCost).multiply(BigDecimal.valueOf(1.15).pow(IdleversePurchases));}
     public boolean buyIdleverse(){
         BigDecimal cost = getIdleverseCost();
         if(cookieCount.compareTo(cost)>=0){
@@ -314,7 +314,7 @@ public class Buildings {
         return false;
     }
 
-    public BigDecimal getCortexBakerCost(){return new BigDecimal(CortexBakerBaseCost.multiply(BigDecimal.valueOf((1.15).pow(CortexBakerPurchases)));}
+    public BigDecimal getCortexBakerCost(){return new BigDecimal(CortexBakerBaseCost).multiply(BigDecimal.valueOf(1.15).pow(CortexBakerPurchases));}
     public boolean buyCortexBaker(){
         BigDecimal cost = getCortexBakerCost();
         if(cookieCount.compareTo(cost)>=0){
@@ -326,7 +326,7 @@ public class Buildings {
         return false;
     }
 
-    public BigDecimal getYouCost(){return new BigDecimal(YouBaseCost.multiply(BigDecimal.valueOf((1.15).pow(YouPurchases)));}
+    public BigDecimal getYouCost(){return new BigDecimal(YouBaseCost).multiply(BigDecimal.valueOf(1.15).pow(YouPurchases));}
     public boolean buyYou(){
         BigDecimal cost = getYouCost();
         if(cookieCount.compareTo(cost)>=0){

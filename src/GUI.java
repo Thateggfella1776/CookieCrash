@@ -338,7 +338,7 @@ public class GUI implements ActionListener {
         FractalEngineButton = new JButton("Fractal Engine (+150000000000 CPS) | Cost: "+ BuildingLogic.getFractalEngineCost()+" Cookies | Owned: "+ BuildingLogic.getFractalEnginePurchases());
         FractalEngineButton.addActionListener(_ -> {
             if(BuildingLogic.buyFractalEngine()){
-                ChancemakerButton.setText("Fractal Engine (+150000000000 CPS) | Cost: "+ BuildingLogic.getFractalEngineCost()+" Cookies | Owned: "+ BuildingLogic.getFractalEnginePurchases());
+                FractalEngineButton.setText("Fractal Engine (+150000000000 CPS) | Cost: "+ BuildingLogic.getFractalEngineCost()+" Cookies | Owned: "+ BuildingLogic.getFractalEnginePurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
                         "Not enough cookies! You need " + BuildingLogic.getFractalEngineCost() + " cookies.",
