@@ -165,6 +165,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             BankPurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(1400));
+            return true;
         }
         return false;
     }
@@ -176,6 +177,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             TemplePurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(7800));
+            return true;
         }
         return false;
     }
@@ -187,6 +189,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             WizardTowerPurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(44000L));
+            return true;
         }
         return false;
     }
@@ -198,6 +201,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             ShipmentPurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(2200000L));
+            return true;
         }
         return false;
     }
@@ -209,6 +213,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             AlchemyLabPurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(1600000L));
+            return true;
         }
         return false;
     }
@@ -220,6 +225,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             PortalPurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(10000000L));
+            return true;
         }
         return false;
     }
@@ -231,6 +237,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             TimeMachinePurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(65000000L));
+            return true;
         }
         return false;
     }
@@ -242,6 +249,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             AntimatterCondenserPurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(430000000L));
+            return true;
         }
         return false;
     }
@@ -253,6 +261,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             PrismPurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(2900000000L));
+            return true;
         }
         return false;
     }
@@ -264,6 +273,7 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             ChancemakerPurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(21000000000L));
+            return true;
         }
         return false;
     }
@@ -275,11 +285,12 @@ public class Buildings {
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             FractalEnginePurchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(150000000000L));
+            return true;
         }
         return false;
     }
 
-    public BigDecimal getJavaConsoleCost(){return new BigDecimal(YouBaseCost.multiply(BigInteger.valueOf((long) 1.15).pow(JavaConsolePurchases)));}
+    public BigDecimal getJavaConsoleCost(){return new BigDecimal(JavaConsoleBaseCost.multiply(BigDecimal.valueOf((1.15).pow(JavaConsolePurchases)));}
     public boolean buyJavaConsole(){
         BigDecimal cost = getJavaConsoleCost();
         if(cookieCount.compareTo(cost)>=0){
@@ -291,7 +302,7 @@ public class Buildings {
         return false;
     }
 
-    public BigDecimal getIdleverseCost(){return new BigDecimal(YouBaseCost.multiply(BigInteger.valueOf((long) 1.15).pow(IdleversePurchases)));}
+    public BigDecimal getIdleverseCost(){return new BigDecimal(IdleverseBaseCost.multiply(BigDecimal.valueOf((1.15).pow(IdleversePurchases)));}
     public boolean buyIdleverse(){
         BigDecimal cost = getIdleverseCost();
         if(cookieCount.compareTo(cost)>=0){
@@ -303,7 +314,7 @@ public class Buildings {
         return false;
     }
 
-    public BigDecimal getCortexBakerCost(){return new BigDecimal(YouBaseCost.multiply(BigInteger.valueOf((long) 1.15).pow(CortexBakerPurchases)));}
+    public BigDecimal getCortexBakerCost(){return new BigDecimal(CortexBakerBaseCost.multiply(BigDecimal.valueOf((1.15).pow(CortexBakerPurchases)));}
     public boolean buyCortexBaker(){
         BigDecimal cost = getCortexBakerCost();
         if(cookieCount.compareTo(cost)>=0){
@@ -315,7 +326,7 @@ public class Buildings {
         return false;
     }
 
-    public BigDecimal getYouCost(){return new BigDecimal(YouBaseCost.multiply(BigInteger.valueOf((long) 1.15).pow(YouPurchases)));}
+    public BigDecimal getYouCost(){return new BigDecimal(YouBaseCost.multiply(BigDecimal.valueOf((1.15).pow(YouPurchases)));}
     public boolean buyYou(){
         BigDecimal cost = getYouCost();
         if(cookieCount.compareTo(cost)>=0){
