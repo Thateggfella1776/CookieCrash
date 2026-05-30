@@ -100,7 +100,7 @@ public class Buildings {
     public boolean buyUpgrade1(){
         int cost = getBuilding1Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building1Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(0.5));
             return true;
@@ -116,7 +116,7 @@ public class Buildings {
     public boolean buyUpgrade2(){
         int cost = getBuilding2Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building2Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(1));
             return true;
@@ -131,7 +131,7 @@ public class Buildings {
     public boolean buyBuilding3(){
         int cost = getBuilding3Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building3Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(8));
             return true;
@@ -146,7 +146,7 @@ public class Buildings {
     public boolean buyBuilding4(){
         int cost = getBuilding4Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building4Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(47));
             return true;
@@ -161,7 +161,7 @@ public class Buildings {
     public boolean buyBuilding5(){
         int cost = getBuilding5Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building5Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(260));
             return true;
@@ -176,7 +176,7 @@ public class Buildings {
     public boolean buyBuilding6(){
         int cost = getBuilding6Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building6Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(1400));
         }
@@ -190,7 +190,7 @@ public class Buildings {
     public boolean buyBuilding7(){
         int cost = getBuilding7Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building7Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(7800));
         }
@@ -203,7 +203,7 @@ public class Buildings {
     public boolean buyBuilding8(){
         int cost = getBuilding8Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building8Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(44000L));
         }
@@ -214,7 +214,7 @@ public class Buildings {
     public boolean buyBuilding9(){
         int cost = getBuilding9Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building9Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(2200000L));
         }
@@ -225,7 +225,7 @@ public class Buildings {
     public boolean buyBuilding10(){
         long cost = getBuilding10Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building10Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(1600000L));
         }
@@ -236,7 +236,7 @@ public class Buildings {
     public boolean buyBuilding11(){
         long cost = getBuilding11Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building11Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(10000000L));
         }
@@ -247,7 +247,7 @@ public class Buildings {
     public boolean buyBuilding12(){
         long cost = getBuilding12Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building12Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(65000000L));
         }
@@ -258,7 +258,7 @@ public class Buildings {
     public boolean buyBuilding13(){
         long cost = getBuilding13Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building13Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(430000000L));
         }
@@ -269,7 +269,7 @@ public class Buildings {
     public boolean buyBuilding14(){
         long cost = getBuilding14Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building14Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(2900000000L));
         }
@@ -280,7 +280,7 @@ public class Buildings {
     public boolean buyBuilding15(){
         long cost = getBuilding15Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building15Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(21000000000L));
         }
@@ -291,7 +291,7 @@ public class Buildings {
     public boolean buyBuilding16(){
         long cost = getBuilding16Cost();
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building16Purchases++;
             CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(150000000000L));
         }
@@ -300,40 +300,44 @@ public class Buildings {
 
     public long getBuilding17Cost(){return Building17BaseCost.multiply(BigInteger.valueOf(Building17Purchases)).longValue();}
     public boolean buyBuilding17(){
-        BigInteger cost = Building17BaseCost.multiply(BigInteger.valueOf(Building17Purchases+1));
+        BigInteger cost = BigInteger.valueOf(getBuilding17Cost());
         if(cookieCount.compareTo(BigDecimal.valueOf(cost.longValue()))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(1100000000000L));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building17Purchases++;
+            CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(1100000000000L));
         }
         return false;
     }
 
     public long getBuilding18Cost(){return Building18BaseCost.multiply(BigInteger.valueOf(Building18Purchases)).longValue();}
     public boolean buyBuilding18(){
-        BigInteger cost = Building18BaseCost.multiply(BigInteger.valueOf(Building18Purchases+1));
+        BigInteger cost = BigInteger.valueOf(getBuilding18Cost());
         if(cookieCount.compareTo(BigDecimal.valueOf(cost.longValue()))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(8300000000000L));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building18Purchases++;
+            CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(8300000000000L));
         }
         return false;
     }
 
     public long getBuilding19Cost(){return Building19BaseCost.multiply(BigInteger.valueOf(Building19Purchases)).longValue();}
     public boolean buyBuilding19(){
-        BigInteger cost = Building19BaseCost.multiply(BigInteger.valueOf(Building19Purchases+1));
+        BigInteger cost = BigInteger.valueOf(getBuilding19Cost());
         if(cookieCount.compareTo(BigDecimal.valueOf(cost.longValue()))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(64000000000000L));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building19Purchases++;
+            CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(64000000000000L));
         }
         return false;
     }
 
     public long getBuilding20Cost(){return Building20BaseCost.multiply(BigInteger.valueOf(Building20Purchases)).longValue();}
     public boolean buyBuilding20(){
-        BigInteger cost = Building20BaseCost.multiply(BigInteger.valueOf(Building20Purchases+1));
+        BigInteger cost = BigInteger.valueOf(getBuilding20Cost());
         if(cookieCount.compareTo(BigDecimal.valueOf(cost.longValue()))>=0){
-            cookieCount=cookieCount.subtract(BigDecimal.valueOf(510000000000000L));
+            cookieCount=cookieCount.subtract(new BigDecimal(cost));
             Building20Purchases++;
+            CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(510000000000000L));
         }
         return false;
     }
