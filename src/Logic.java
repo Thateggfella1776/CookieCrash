@@ -16,26 +16,26 @@ public class Logic {
        String text = "Cookie Count:"+BuildingLogic.getCookieCount()+"\n"
                +"Cookies Per Click:"+BuildingLogic.getCookiesPerClick()+"\n"
                +"Cookies Per Second:"+BuildingLogic.getCookiesPerSecond()+"\n"
-               +"Building 1 Purchases:"+BuildingLogic.getBuilding1Purchases()+"\n"
-               +"Building 2 Purchases:"+BuildingLogic.getBuilding2Purchases()+"\n"
-               +"Building 3 Purchases:"+BuildingLogic.getBuilding3Purchases()+"\n"
-               +"Building 4 Purchases:"+BuildingLogic.getBuilding4Purchases()+"\n"
-               +"Building 5 Purchases:"+BuildingLogic.getBuilding5Purchases()+"\n"
-               +"Building 6 Purchases:"+BuildingLogic.getBuilding6Purchases()+"\n"
-               +"Building 7 Purchases:"+BuildingLogic.getBuilding7Purchases()+"\n"
-               +"Building 8 Purchases:"+BuildingLogic.getBuilding8Purchases()+"\n"
-               +"Building 9 Purchases:"+BuildingLogic.getBuilding9Purchases()+"\n"
-               +"Building 10 Purchases:"+BuildingLogic.getBuilding10Purchases()+"\n"
-               +"Building 11 Purchases:"+BuildingLogic.getBuilding11Purchases()+"\n"
-               +"Building 12 Purchases:"+BuildingLogic.getBuilding12Purchases()+"\n"
-               +"Building 13 Purchases:"+BuildingLogic.getBuilding13Purchases()+"\n"
-               +"Building 14 Purchases:"+BuildingLogic.getBuilding14Purchases()+"\n"
-               +"Building 15 Purchases:"+BuildingLogic.getBuilding15Purchases()+"\n"
-               +"Building 16 Purchases:"+BuildingLogic.getBuilding16Purchases()+"\n"
-               +"Building 17 Purchases:"+BuildingLogic.getBuilding17Purchases()+"\n"
-               +"Building 18 Purchases:"+BuildingLogic.getBuilding18Purchases()+"\n"
-               +"Building 19 Purchases:"+BuildingLogic.getBuilding19Purchases()+"\n"
-               +"Building 20 Purchases:"+BuildingLogic.getBuilding20Purchases()+"\n"
+               +"Building 1 Purchases:"+BuildingLogic.getCursorPurchases()+"\n"
+               +"Building 2 Purchases:"+BuildingLogic.getGrandmaPurchases()+"\n"
+               +"Building 3 Purchases:"+BuildingLogic.getFarmPurchases()+"\n"
+               +"Building 4 Purchases:"+BuildingLogic.getMinePurchases()+"\n"
+               +"Building 5 Purchases:"+BuildingLogic.getFactoryPurchases()+"\n"
+               +"Building 6 Purchases:"+BuildingLogic.getBankPurchases()+"\n"
+               +"Building 7 Purchases:"+BuildingLogic.getTemplePurchases()+"\n"
+               +"Building 8 Purchases:"+BuildingLogic.getWizardTowerPurchases()+"\n"
+               +"Building 9 Purchases:"+BuildingLogic.getShipmentPurchases()+"\n"
+               +"Building 10 Purchases:"+BuildingLogic.getAlchemyLabPurchases()+"\n"
+               +"Building 11 Purchases:"+BuildingLogic.getPortalPurchases()+"\n"
+               +"Building 12 Purchases:"+BuildingLogic.getTimeMachinePurchases()+"\n"
+               +"Building 13 Purchases:"+BuildingLogic.getAntimatterCondenserPurchases()+"\n"
+               +"Building 14 Purchases:"+BuildingLogic.getPrismPurchases()+"\n"
+               +"Building 15 Purchases:"+BuildingLogic.getChancemakerPurchases()+"\n"
+               +"Building 16 Purchases:"+BuildingLogic.getFractalEnginePurchases()+"\n"
+               +"Building 17 Purchases:"+BuildingLogic.getJavaConsolePurchases()+"\n"
+               +"Building 18 Purchases:"+BuildingLogic.getIdleversePurchases()+"\n"
+               +"Building 19 Purchases:"+BuildingLogic.getCortexBakerPurchases()+"\n"
+               +"Building 20 Purchases:"+BuildingLogic.getYouPurchases()+"\n"
                +"Have a Cookie!";
        Files.writeString(Path.of("save.txt"),text);
    }
@@ -59,64 +59,64 @@ public class Logic {
                     BuildingLogic.CookiesPerSecond = num;
                     break;
                 case "Building 1 Purchases":
-                    BuildingLogic.Building1Purchases = num.intValue();
+                    BuildingLogic.CursorPurchases = num.intValue();
                     break;
                 case "Building 2 Purchases":
-                    BuildingLogic.Building2Purchases = num.intValue();
+                    BuildingLogic.GrandmaPurchases = num.intValue();
                     break;
                 case "Building 3 Purchases":
-                    BuildingLogic.Building3Purchases = num.intValue();
+                    BuildingLogic.FarmPurchases = num.intValue();
                     break;
                 case "Building 4 Purchases":
-                    BuildingLogic.Building4Purchases = num.intValue();
+                    BuildingLogic.MinePurchases = num.intValue();
                     break;
                 case "Building 5 Purchases":
-                    BuildingLogic.Building5Purchases = num.intValue();
+                    BuildingLogic.FactoryPurchases = num.intValue();
                     break;
                 case "Building 6 Purchases":
-                    BuildingLogic.Building6Purchases = num.intValue();
+                    BuildingLogic.BankPurchases = num.intValue();
                     break;
                 case "Building 7 Purchases":
-                    BuildingLogic.Building7Purchases = num.intValue();
+                    BuildingLogic.TemplePurchases = num.intValue();
                     break;
                 case "Building 8 Purchases":
-                    BuildingLogic.Building8Purchases = num.intValue();
+                    BuildingLogic.WizardTowerPurchases = num.intValue();
                     break;
                 case "Building 9 Purchases":
-                    BuildingLogic.Building9Purchases = num.intValue();
+                    BuildingLogic.ShipmentPurchases = num.intValue();
                     break;
                 case "Building 10 Purchases":
-                    BuildingLogic.Building10Purchases = num.intValue();
+                    BuildingLogic.AlchemyLabPurchases = num.intValue();
                     break;
                 case "Building 11 Purchases":
-                    BuildingLogic.Building11Purchases = num.intValue();
+                    BuildingLogic.PortalPurchases = num.intValue();
                     break;
                 case "Building 12 Purchases":
-                    BuildingLogic.Building12Purchases = num.intValue();
+                    BuildingLogic.TimeMachinePurchases = num.intValue();
                     break;
                 case "Building 13 Purchases":
-                    BuildingLogic.Building13Purchases = num.intValue();
+                    BuildingLogic.AntimatterCondenserPurchases = num.intValue();
                     break;
                 case "Building 14 Purchases":
-                    BuildingLogic.Building14Purchases = num.intValue();
+                    BuildingLogic.PrismPurchases = num.intValue();
                     break;
                 case "Building 15 Purchases":
-                    BuildingLogic.Building15Purchases = num.intValue();
+                    BuildingLogic.ChancemakerPurchases = num.intValue();
                     break;
                 case "Building 16 Purchases":
-                    BuildingLogic.Building16Purchases = num.intValue();
+                    BuildingLogic.FractalEnginePurchases = num.intValue();
                     break;
                 case "Building 17 Purchases":
-                    BuildingLogic.Building17Purchases = num.intValue();
+                    BuildingLogic.JavaConsolePurchases = num.intValue();
                     break;
                 case "Building 18 Purchases":
-                    BuildingLogic.Building18Purchases = num.intValue();
+                    BuildingLogic.IdleversePurchases = num.intValue();
                     break;
                 case "Building 19 Purchases":
-                    BuildingLogic.Building19Purchases = num.intValue();
+                    BuildingLogic.CortexBakerPurchases = num.intValue();
                     break;
                 case "Building 20 Purchases":
-                    BuildingLogic.Building20Purchases = num.intValue();
+                    BuildingLogic.YouPurchases = num.intValue();
                     break;
                 default:
                     break;

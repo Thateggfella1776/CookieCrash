@@ -28,26 +28,26 @@ public class GUI implements ActionListener {
     JButton SaveGameButton;
     JButton LoadGameButton;
     JButton cookieButton;
-    JButton Building1Button;
-    JButton Building2Button;
-    JButton Building3Button;
-    JButton Building4Button;
-    JButton Building5Button;
-    JButton Building6Button;
-    JButton Building7Button;
-    JButton Building8Button;
-    JButton Building9Button;
-    JButton Building10Button;
-    JButton Building11Button;
-    JButton Building12Button;
-    JButton Building13Button;
-    JButton Building14Button;
-    JButton Building15Button;
-    JButton Building16Button;
-    JButton Building17Button;
-    JButton Building18Button;
-    JButton Building19Button;
-    JButton Building20Button;
+    JButton CursorButton;
+    JButton GrandmaButton;
+    JButton FarmButton;
+    JButton MineButton;
+    JButton FactoryButton;
+    JButton BankButton;
+    JButton TempleButton;
+    JButton WizardTowerButton;
+    JButton ShipmentButton;
+    JButton AlchemyLabButton;
+    JButton PortalButton;
+    JButton TimeMachineButton;
+    JButton AntimatterCondenserButton;
+    JButton PrismButton;
+    JButton ChancemakerButton;
+    JButton FractalEngineButton;
+    JButton JavaConsoleButton;
+    JButton IdleverseButton;
+    JButton CortexBakerButton;
+    JButton YouButton;
 
     //Panels
     JPanel MegaPanel = new JPanel();
@@ -74,8 +74,8 @@ public class GUI implements ActionListener {
             ClickPWR.setText("CPC: "+ BuildingLogic.getCookiesPerClick());
             CurrentCookies.setText("Cookies: "+ BuildingLogic.getCookieCount());
             AutoPWR.setText("CPS: " + BuildingLogic.getCookiesPerSecond());
-            Building1Button.setText("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getBuilding1Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding1Purchases());
-            Building2Button.setText("Upgrade (+1 CPS) | Cost: "+ BuildingLogic.getBuilding2Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding2Purchases());
+            CursorButton.setText("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
+            GrandmaButton.setText("Upgrade (+1 CPS) | Cost: "+ BuildingLogic.getGrandmaCost()+" Cookies | Owned: "+ BuildingLogic.getGrandmaPurchases());
             if(BuildingLogic.getCookiesPerSecond().compareTo(BigDecimal.valueOf(0))>0&&!CookiesOn){
                 BuildingLogic.AutoTimer();
                 CookiesOn=true;
@@ -170,222 +170,222 @@ public class GUI implements ActionListener {
         });
 
         //Upgrade Buttons
-        Building1Button = new JButton("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getBuilding1Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding1Purchases());
-        Building1Button.addActionListener(_ -> {
-            if(BuildingLogic.buyUpgrade1()){
-                Building1Button.setText("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getBuilding1Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding1Purchases());
+        CursorButton = new JButton("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
+        CursorButton.addActionListener(_ -> {
+            if(BuildingLogic.buyCursor()){
+                CursorButton.setText("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding1Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getCursorCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE); //Source: https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html
             }
         });
-        Building2Button = new JButton("Upgrade (+1 CPS) | Cost: "+ BuildingLogic.getBuilding2Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding2Purchases());
-        Building2Button.addActionListener(_ -> {
-            if(BuildingLogic.buyUpgrade2()){
-                Building2Button.setText("Upgrade (+1 CPS) | Cost: "+ BuildingLogic.getBuilding2Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding2Purchases());
+        GrandmaButton = new JButton("Upgrade (+1 CPS) | Cost: "+ BuildingLogic.getGrandmaCost()+" Cookies | Owned: "+ BuildingLogic.getGrandmaPurchases());
+        GrandmaButton.addActionListener(_ -> {
+            if(BuildingLogic.buyGrandma()){
+                GrandmaButton.setText("Upgrade (+1 CPS) | Cost: "+ BuildingLogic.getGrandmaCost()+" Cookies | Owned: "+ BuildingLogic.getGrandmaPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding2Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getGrandmaCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building3Button = new JButton("Upgrade (+8 CPS) | Cost: "+ BuildingLogic.getBuilding3Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding3Purchases());
-        Building3Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding3()){
-                Building3Button.setText("Upgrade (+8 CPS) | Cost: "+ BuildingLogic.getBuilding3Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding3Purchases());
+        FarmButton = new JButton("Upgrade (+8 CPS) | Cost: "+ BuildingLogic.getFarmCost()+" Cookies | Owned: "+ BuildingLogic.getFarmPurchases());
+        FarmButton.addActionListener(_ -> {
+            if(BuildingLogic.buyFarm()){
+                FarmButton.setText("Upgrade (+8 CPS) | Cost: "+ BuildingLogic.getFarmCost()+" Cookies | Owned: "+ BuildingLogic.getFarmPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding3Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getFarmCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building4Button = new JButton("Upgrade (+47 CPS) | Cost: "+ BuildingLogic.getBuilding4Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding4Purchases());
-        Building4Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding4()){
-                Building4Button.setText("Upgrade (+47 CPS) | Cost: "+ BuildingLogic.getBuilding4Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding4Purchases());
+        MineButton = new JButton("Upgrade (+47 CPS) | Cost: "+ BuildingLogic.getMineCost()+" Cookies | Owned: "+ BuildingLogic.getMinePurchases());
+        MineButton.addActionListener(_ -> {
+            if(BuildingLogic.buyMine()){
+                MineButton.setText("Upgrade (+47 CPS) | Cost: "+ BuildingLogic.getMineCost()+" Cookies | Owned: "+ BuildingLogic.getMinePurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding4Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getMineCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building5Button = new JButton("Upgrade (+260 CPS) | Cost: "+ BuildingLogic.getBuilding5Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding5Purchases());
-        Building5Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding5()){
-                Building5Button.setText("Upgrade (+260 CPS) | Cost: "+ BuildingLogic.getBuilding5Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding5Purchases());
+        FactoryButton = new JButton("Upgrade (+260 CPS) | Cost: "+ BuildingLogic.getFactoryCost()+" Cookies | Owned: "+ BuildingLogic.getFactoryPurchases());
+        FactoryButton.addActionListener(_ -> {
+            if(BuildingLogic.buyFactory()){
+                FactoryButton.setText("Upgrade (+260 CPS) | Cost: "+ BuildingLogic.getFactoryCost()+" Cookies | Owned: "+ BuildingLogic.getFactoryPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding5Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getFactoryCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building6Button = new JButton("Upgrade (+1400 CPS) | Cost: "+ BuildingLogic.getBuilding6Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding6Purchases());
-        Building6Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding6()){
-                Building6Button.setText("Upgrade (+1400 CPS) | Cost: "+ BuildingLogic.getBuilding6Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding6Purchases());
+        BankButton = new JButton("Upgrade (+1400 CPS) | Cost: "+ BuildingLogic.getBankCost()+" Cookies | Owned: "+ BuildingLogic.getBankPurchases());
+        BankButton.addActionListener(_ -> {
+            if(BuildingLogic.buyBank()){
+                BankButton.setText("Upgrade (+1400 CPS) | Cost: "+ BuildingLogic.getBankCost()+" Cookies | Owned: "+ BuildingLogic.getBankPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding6Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getBankCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building7Button = new JButton("Upgrade (+7800 CPS) | Cost: "+ BuildingLogic.getBuilding7Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding7Purchases());
-        Building7Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding7()){
-                Building7Button.setText("Upgrade (+7800 CPS) | Cost: "+ BuildingLogic.getBuilding7Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding7Purchases());
+        TempleButton = new JButton("Upgrade (+7800 CPS) | Cost: "+ BuildingLogic.getTempleCost()+" Cookies | Owned: "+ BuildingLogic.getTemplePurchases());
+        TempleButton.addActionListener(_ -> {
+            if(BuildingLogic.buyTemple()){
+                TempleButton.setText("Upgrade (+7800 CPS) | Cost: "+ BuildingLogic.getTempleCost()+" Cookies | Owned: "+ BuildingLogic.getTemplePurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding7Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getTempleCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building8Button = new JButton("Upgrade (+44000 CPS) | Cost: "+ BuildingLogic.getBuilding8Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding8Purchases());
-        Building8Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding7()){
-                Building8Button.setText("Upgrade (+44000 CPS) | Cost: "+ BuildingLogic.getBuilding8Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding8Purchases());
+        WizardTowerButton = new JButton("Upgrade (+44000 CPS) | Cost: "+ BuildingLogic.getWizardTowerCost()+" Cookies | Owned: "+ BuildingLogic.getWizardTowerPurchases());
+        WizardTowerButton.addActionListener(_ -> {
+            if(BuildingLogic.buyWizardTower()){
+                WizardTowerButton.setText("Upgrade (+44000 CPS) | Cost: "+ BuildingLogic.getWizardTowerCost()+" Cookies | Owned: "+ BuildingLogic.getWizardTowerPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding8Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getWizardTowerCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building9Button = new JButton("Upgrade (+260000 CPS) | Cost: "+ BuildingLogic.getBuilding9Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding9Purchases());
-        Building9Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding9()){
-                Building9Button.setText("Upgrade (+260000 CPS) | Cost: "+ BuildingLogic.getBuilding9Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding9Purchases());
+        ShipmentButton = new JButton("Upgrade (+260000 CPS) | Cost: "+ BuildingLogic.getShipmentCost()+" Cookies | Owned: "+ BuildingLogic.getShipmentPurchases());
+        ShipmentButton.addActionListener(_ -> {
+            if(BuildingLogic.buyShipment()){
+                ShipmentButton.setText("Upgrade (+260000 CPS) | Cost: "+ BuildingLogic.getShipmentCost()+" Cookies | Owned: "+ BuildingLogic.getShipmentPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding9Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getShipmentCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building10Button = new JButton("Upgrade (+1600000 CPS) | Cost: "+ BuildingLogic.getBuilding10Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding10Purchases());
-        Building10Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding10()){
-                Building10Button.setText("Upgrade (+1600000 CPS) | Cost: "+ BuildingLogic.getBuilding10Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding10Purchases());
+        AlchemyLabButton = new JButton("Upgrade (+1600000 CPS) | Cost: "+ BuildingLogic.getAlchemyLabCost()+" Cookies | Owned: "+ BuildingLogic.getAlchemyLabPurchases());
+        AlchemyLabButton.addActionListener(_ -> {
+            if(BuildingLogic.buyAlchemyLab()){
+                AlchemyLabButton.setText("Upgrade (+1600000 CPS) | Cost: "+ BuildingLogic.getAlchemyLabCost()+" Cookies | Owned: "+ BuildingLogic.getAlchemyLabPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding10Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getAlchemyLabCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building11Button = new JButton("Upgrade (+10000000 CPS) | Cost: "+ BuildingLogic.getBuilding11Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding11Purchases());
-        Building11Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding11()){
-                Building11Button.setText("Upgrade (+10000000 CPS) | Cost: "+ BuildingLogic.getBuilding11Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding11Purchases());
+        PortalButton = new JButton("Upgrade (+10000000 CPS) | Cost: "+ BuildingLogic.getPortalCost()+" Cookies | Owned: "+ BuildingLogic.getPortalPurchases());
+        PortalButton.addActionListener(_ -> {
+            if(BuildingLogic.buyPortal()){
+                PortalButton.setText("Upgrade (+10000000 CPS) | Cost: "+ BuildingLogic.getPortalCost()+" Cookies | Owned: "+ BuildingLogic.getPortalPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding11Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getPortalCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building12Button = new JButton("Upgrade (+65000000 CPS) | Cost: "+ BuildingLogic.getBuilding12Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding12Purchases());
-        Building12Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding12()){
-                Building12Button.setText("Upgrade (+65000000 CPS) | Cost: "+ BuildingLogic.getBuilding12Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding12Purchases());
+        TimeMachineButton = new JButton("Upgrade (+65000000 CPS) | Cost: "+ BuildingLogic.getTimeMachineCost()+" Cookies | Owned: "+ BuildingLogic.getTimeMachinePurchases());
+        TimeMachineButton.addActionListener(_ -> {
+            if(BuildingLogic.buyTimeMachine()){
+                TimeMachineButton.setText("Upgrade (+65000000 CPS) | Cost: "+ BuildingLogic.getTimeMachineCost()+" Cookies | Owned: "+ BuildingLogic.getTimeMachinePurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding12Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getTimeMachineCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building13Button = new JButton("Upgrade (+430000000 CPS) | Cost: "+ BuildingLogic.getBuilding13Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding13Purchases());
-        Building13Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding13()){
-                Building13Button.setText("Upgrade (+430000000 CPS) | Cost: "+ BuildingLogic.getBuilding13Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding13Purchases());
+        AntimatterCondenserButton = new JButton("Upgrade (+430000000 CPS) | Cost: "+ BuildingLogic.getAntimatterCondenserCost()+" Cookies | Owned: "+ BuildingLogic.getAntimatterCondenserPurchases());
+        AntimatterCondenserButton.addActionListener(_ -> {
+            if(BuildingLogic.buyAntimatterCondenser()){
+                AntimatterCondenserButton.setText("Upgrade (+430000000 CPS) | Cost: "+ BuildingLogic.getAntimatterCondenserCost()+" Cookies | Owned: "+ BuildingLogic.getAntimatterCondenserPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding13Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getAntimatterCondenserCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building14Button = new JButton("Upgrade (+2900000000 CPS) | Cost: "+ BuildingLogic.getBuilding14Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding14Purchases());
-        Building14Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding14()){
-                Building14Button.setText("Upgrade (+2900000000 CPS) | Cost: "+ BuildingLogic.getBuilding14Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding14Purchases());
+        PrismButton = new JButton("Upgrade (+2900000000 CPS) | Cost: "+ BuildingLogic.getPrismCost()+" Cookies | Owned: "+ BuildingLogic.getPrismPurchases());
+        PrismButton.addActionListener(_ -> {
+            if(BuildingLogic.buyPrism()){
+                PrismButton.setText("Upgrade (+2900000000 CPS) | Cost: "+ BuildingLogic.getPrismCost()+" Cookies | Owned: "+ BuildingLogic.getPrismPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding14Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getPrismCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building15Button = new JButton("Upgrade (+21000000000 CPS) | Cost: "+ BuildingLogic.getBuilding15Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding15Purchases());
-        Building15Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding15()){
-                Building15Button.setText("Upgrade (+21000000000 CPS) | Cost: "+ BuildingLogic.getBuilding15Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding15Purchases());
+        ChancemakerButton = new JButton("Upgrade (+21000000000 CPS) | Cost: "+ BuildingLogic.getChancemakerCost()+" Cookies | Owned: "+ BuildingLogic.getChancemakerPurchases());
+        ChancemakerButton.addActionListener(_ -> {
+            if(BuildingLogic.buyChancemaker()){
+                ChancemakerButton.setText("Upgrade (+21000000000 CPS) | Cost: "+ BuildingLogic.getChancemakerCost()+" Cookies | Owned: "+ BuildingLogic.getChancemakerPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding15Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getChancemakerCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building16Button = new JButton("Upgrade (+150000000000 CPS) | Cost: "+ BuildingLogic.getBuilding16Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding16Purchases());
-        Building16Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding16()){
-                Building15Button.setText("Upgrade (+150000000000 CPS) | Cost: "+ BuildingLogic.getBuilding16Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding16Purchases());
+        FractalEngineButton = new JButton("Upgrade (+150000000000 CPS) | Cost: "+ BuildingLogic.getFractalEngineCost()+" Cookies | Owned: "+ BuildingLogic.getFractalEnginePurchases());
+        FractalEngineButton.addActionListener(_ -> {
+            if(BuildingLogic.buyFractalEngine()){
+                ChancemakerButton.setText("Upgrade (+150000000000 CPS) | Cost: "+ BuildingLogic.getFractalEngineCost()+" Cookies | Owned: "+ BuildingLogic.getFractalEnginePurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding16Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getFractalEngineCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building17Button = new JButton("Upgrade (+1100000000000 CPS) | Cost: "+ BuildingLogic.getBuilding17Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding17Purchases());
-        Building17Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding17()){
-                Building17Button.setText("Upgrade (+1100000000000 CPS) | Cost: "+ BuildingLogic.getBuilding17Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding17Purchases());
+        JavaConsoleButton = new JButton("Upgrade (+1100000000000 CPS) | Cost: "+ BuildingLogic.getJavaConsoleCost()+" Cookies | Owned: "+ BuildingLogic.getJavaConsolePurchases());
+        JavaConsoleButton.addActionListener(_ -> {
+            if(BuildingLogic.buyJavaConsole()){
+                JavaConsoleButton.setText("Upgrade (+1100000000000 CPS) | Cost: "+ BuildingLogic.getJavaConsoleCost()+" Cookies | Owned: "+ BuildingLogic.getJavaConsolePurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding17Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getJavaConsoleCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building18Button = new JButton("Upgrade (+8300000000000 CPS) | Cost: "+ BuildingLogic.getBuilding18Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding18Purchases());
-        Building18Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding18()){
-                Building18Button.setText("Upgrade (+8300000000000 CPS) | Cost: "+ BuildingLogic.getBuilding18Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding18Purchases());
+        IdleverseButton = new JButton("Upgrade (+8300000000000 CPS) | Cost: "+ BuildingLogic.getIdleverseCost()+" Cookies | Owned: "+ BuildingLogic.getIdleversePurchases());
+        IdleverseButton.addActionListener(_ -> {
+            if(BuildingLogic.buyIdleverse()){
+                IdleverseButton.setText("Upgrade (+8300000000000 CPS) | Cost: "+ BuildingLogic.getIdleverseCost()+" Cookies | Owned: "+ BuildingLogic.getIdleversePurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding18Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getIdleverseCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building19Button = new JButton("Upgrade (+64000000000000 CPS) | Cost: "+ BuildingLogic.getBuilding19Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding19Purchases());
-        Building19Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding19()){
-                Building19Button.setText("Upgrade (+64000000000000 CPS) | Cost: "+ BuildingLogic.getBuilding19Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding19Purchases());
+        CortexBakerButton = new JButton("Upgrade (+64000000000000 CPS) | Cost: "+ BuildingLogic.getCortexBakerCost()+" Cookies | Owned: "+ BuildingLogic.getCortexBakerPurchases());
+        CortexBakerButton.addActionListener(_ -> {
+            if(BuildingLogic.buyCortexBaker()){
+                CortexBakerButton.setText("Upgrade (+64000000000000 CPS) | Cost: "+ BuildingLogic.getCortexBakerCost()+" Cookies | Owned: "+ BuildingLogic.getCortexBakerPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding19Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getCortexBakerCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
         });
-        Building20Button = new JButton("Upgrade (+500000000000000 CPS) | Cost: "+ BuildingLogic.getBuilding20Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding20Purchases());
-        Building20Button.addActionListener(_ -> {
-            if(BuildingLogic.buyBuilding20()){
-                Building20Button.setText("Upgrade (+500000000000000 CPS) | Cost: "+ BuildingLogic.getBuilding20Cost()+" Cookies | Owned: "+ BuildingLogic.getBuilding20Purchases());
+        YouButton = new JButton("Upgrade (+500000000000000 CPS) | Cost: "+ BuildingLogic.getYouCost()+" Cookies | Owned: "+ BuildingLogic.getYouPurchases());
+        YouButton.addActionListener(_ -> {
+            if(BuildingLogic.buyYou()){
+                YouButton.setText("Upgrade (+500000000000000 CPS) | Cost: "+ BuildingLogic.getYouCost()+" Cookies | Owned: "+ BuildingLogic.getYouPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
-                        "Not enough cookies! You need " + BuildingLogic.getBuilding20Cost() + " cookies.",
+                        "Not enough cookies! You need " + BuildingLogic.getYouCost() + " cookies.",
                         "Insufficient Cookies",
                         JOptionPane.WARNING_MESSAGE);
             }
@@ -422,26 +422,26 @@ public class GUI implements ActionListener {
         OptionsPanel.add(SaveGameButton);
         OptionsPanel.add(LoadGameButton);
         CookiePanel.add(cookieButton);
-        BuildingPanel.add(Building1Button);
-        BuildingPanel.add(Building2Button);
-        BuildingPanel.add(Building3Button);
-        BuildingPanel.add(Building4Button);
-        BuildingPanel.add(Building5Button);
-        BuildingPanel.add(Building6Button);
-        BuildingPanel.add(Building7Button);
-        BuildingPanel.add(Building8Button);
-        BuildingPanel.add(Building9Button);
-        BuildingPanel.add(Building10Button);
-        BuildingPanel.add(Building11Button);
-        BuildingPanel.add(Building12Button);
-        BuildingPanel.add(Building13Button);
-        BuildingPanel.add(Building14Button);
-        BuildingPanel.add(Building15Button);
-        BuildingPanel.add(Building16Button);
-        BuildingPanel.add(Building17Button);
-        BuildingPanel.add(Building18Button);
-        BuildingPanel.add(Building19Button);
-        BuildingPanel.add(Building20Button);
+        BuildingPanel.add(CursorButton);
+        BuildingPanel.add(GrandmaButton);
+        BuildingPanel.add(FarmButton);
+        BuildingPanel.add(MineButton);
+        BuildingPanel.add(FactoryButton);
+        BuildingPanel.add(BankButton);
+        BuildingPanel.add(TempleButton);
+        BuildingPanel.add(WizardTowerButton);
+        BuildingPanel.add(ShipmentButton);
+        BuildingPanel.add(AlchemyLabButton);
+        BuildingPanel.add(PortalButton);
+        BuildingPanel.add(TimeMachineButton);
+        BuildingPanel.add(AntimatterCondenserButton);
+        BuildingPanel.add(PrismButton);
+        BuildingPanel.add(ChancemakerButton);
+        BuildingPanel.add(FractalEngineButton);
+        BuildingPanel.add(JavaConsoleButton);
+        BuildingPanel.add(IdleverseButton);
+        BuildingPanel.add(CortexBakerButton);
+        BuildingPanel.add(YouButton);
         UpgradesBuildings.add(BuildingPanel, BorderLayout.SOUTH);
         StatsPanel.add(CurrentCookies);
         StatsPanel.add(ClickPWR);
