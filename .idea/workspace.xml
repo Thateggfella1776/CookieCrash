@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="More Reworks">
+    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="Now working on my upgrade systems">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Upgrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Upgrades.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="18" />
+    <option name="cachedIndexableFilesCount" value="20" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -145,6 +147,7 @@
       <workItem from="1779477872891" duration="16000" />
       <workItem from="1779486402726" duration="10302000" />
       <workItem from="1779986880447" duration="10213000" />
+      <workItem from="1780331395203" duration="2829000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed UI so its not so sloppy, added auto click upgrade, began creation of save/load components">
       <option name="closed" value="true" />
@@ -178,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779467431485</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Now working on my upgrade systems">
+      <option name="closed" value="true" />
+      <created>1780329752644</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780329752644</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +211,18 @@
     <MESSAGE value="Removed unnecessary functions to slim code" />
     <MESSAGE value="Began working on saving function Its a work in progress, but now the button does some stuff" />
     <MESSAGE value="More Reworks" />
-    <option name="LAST_COMMIT_MESSAGE" value="More Reworks" />
+    <MESSAGE value="Now working on my upgrade systems" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now working on my upgrade systems" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI.java</url>
+          <line>471</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

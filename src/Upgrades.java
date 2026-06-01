@@ -1,4 +1,5 @@
 class Upgrades {
+    double BaseCPSMult=1.0;
     double CursorCPSMult=1.0;
     double GrandmaCPSMult=1.0;
     double FarmCPSMult=1.0;
@@ -21,6 +22,7 @@ class Upgrades {
     double YouCPSMult=1.0;
 
     //Returns for my mults
+    public double getBaseCPSMult() {return BaseCPSMult;}
     public double getCursorCPSMult() {return CursorCPSMult;}
     public double getGrandmaCPSMult() {return GrandmaCPSMult;}
     public double getFarmCPSMult() {return FarmCPSMult;}

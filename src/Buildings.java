@@ -88,7 +88,7 @@ public class Buildings {
         CPSTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                cookieCount=cookieCount.add(CookiesPerSecond);
+                cookieCount=(cookieCount.add(CookiesPerSecond)).multiply(BigDecimal.valueOf(CPSMults.getBaseCPSMult()));
             }
         },0,1000);
     }

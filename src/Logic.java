@@ -7,9 +7,11 @@ import java.math.BigDecimal;
 
 public class Logic {
    Buildings BuildingLogic;
-   public Logic(Buildings buildings){
-       this.BuildingLogic=buildings;
-   }
+   Upgrades CPSMult;
+   public Logic(Buildings buildings, Upgrades upgrades) {
+    this.BuildingLogic = buildings;
+    this.CPSMult = upgrades;
+}
 
     //Save Function, Source:https://www.youtube.com/shorts/MvzzBvbiwjk?feature=share
     public void SaveToFile() throws IOException{
@@ -36,6 +38,27 @@ public class Logic {
                +"Idleverse Purchases:"+BuildingLogic.getIdleversePurchases()+"\n"
                +"Cortex Baker Purchases:"+BuildingLogic.getCortexBakerPurchases()+"\n"
                +"You Purchases:"+BuildingLogic.getYouPurchases()+"\n"
+               +"Cursor CPS Mult:"+CPSMult.getCursorCPSMult()+"\n"
+               +"Grandma CPS Mult:"+CPSMult.getGrandmaCPSMult()+"\n"
+               +"Farm CPS Mult:"+CPSMult.getFarmCPSMult()+"\n"
+               +"Mine CPS Mult:"+CPSMult.getMineCPSMult()+"\n"
+               +"Factory CPS Mult:"+CPSMult.getFactoryCPSMult()+"\n"
+               +"Bank CPS Mult:"+CPSMult.getBankCPSMult()+"\n"
+               +"Temple CPS Mult:"+CPSMult.getTempleCPSMult()+"\n"
+               +"Wizard Tower CPS Mult:"+CPSMult.getWizardTowerCPSMult()+"\n"
+               +"Shipment CPS Mult:"+CPSMult.getShipmentCPSMult()+"\n"
+               +"Alchemy Lab CPS Mult:"+CPSMult.getAlchemyLabCPSMult()+"\n"
+               +"Portal CPS Mult:"+CPSMult.getPortalCPSMult()+"\n"
+               +"Time Machine CPS Mult:"+CPSMult.getTimeMachineCPSMult()+"\n"
+               +"Antimatter Condenser CPS Mult:"+CPSMult.getAntimatterCondenserCPSMult()+"\n"
+               +"Prism CPS Mult:"+CPSMult.getPrismCPSMult()+"\n"
+               +"Chancemaker CPS Mult:"+CPSMult.getChancemakerCPSMult()+"\n"
+               +"Fractal Engine CPS Mult:"+CPSMult.getFractalEngineCPSMult()+"\n"
+               +"Java Console CPS Mult:"+CPSMult.getJavaConsoleCPSMult()+"\n"
+               +"Idleverse CPS Mult:"+CPSMult.getIdleverseCPSMult()+"\n"
+               +"Cortex Baker CPS Mult:"+CPSMult.getCortexBakerCPSMult()+"\n"
+               +"You CPS Mult:"+CPSMult.getYouCPSMult()+"\n"
+               +"Base CPS Mult:"+CPSMult.getBaseCPSMult()+"\n"
                +"Have a Cookie!";
        Files.writeString(Path.of("save.txt"),text);
    }
@@ -117,6 +140,69 @@ public class Logic {
                     break;
                 case "You Purchases":
                     BuildingLogic.YouPurchases = num.intValue();
+                    break;
+                case "Cursor CPS Mult":
+                    CPSMult.CursorCPSMult=num.doubleValue();
+                    break;
+                case "Grandma CPS Mult":
+                    CPSMult.GrandmaCPSMult=num.doubleValue();
+                    break;
+                case "Farm CPS Mult":
+                    CPSMult.FarmCPSMult=num.doubleValue();
+                    break;
+                case "Mine CPS Mult":
+                    CPSMult.MineCPSMult=num.doubleValue();
+                    break;
+                case "Factory CPS Mult":
+                    CPSMult.FactoryCPSMult=num.doubleValue();
+                    break;
+                case "Bank CPS Mult":
+                    CPSMult.BankCPSMult=num.doubleValue();
+                    break;
+                case "Temple CPS Mult":
+                    CPSMult.TempleCPSMult=num.doubleValue();
+                    break;
+                case "Wizard Tower CPS Mult":
+                    CPSMult.WizardTowerCPSMult=num.doubleValue();
+                    break;
+                case "Shipment CPS Mult":
+                    CPSMult.ShipmentCPSMult=num.doubleValue();
+                    break;
+                case "Alchemy Lab CPS Mult":
+                    CPSMult.AlchemyLabCPSMult=num.doubleValue();
+                    break;
+                case "Portal CPS Mult":
+                    CPSMult.PortalCPSMult=num.doubleValue();
+                    break;
+                case "Time Machine CPS Mult":
+                    CPSMult.TimeMachineCPSMult=num.doubleValue();
+                    break;
+                case "Antimatter Condenser CPS Mult":
+                    CPSMult.AntimatterCondenserCPSMult=num.doubleValue();
+                    break;
+                case "Prism CPS Mult":
+                    CPSMult.PrismCPSMult=num.doubleValue();
+                    break;
+                case "Chancemaker CPS Mult":
+                    CPSMult.ChancemakerCPSMult=num.doubleValue();
+                    break;
+                case "Fractal Engine CPS Mult":
+                    CPSMult.FractalEngineCPSMult=num.doubleValue();
+                    break;
+                case "Java Console CPS Mult":
+                    CPSMult.JavaConsoleCPSMult=num.doubleValue();
+                    break;
+                case "Idleverse CPS Mult":
+                    CPSMult.IdleverseCPSMult=num.doubleValue();
+                    break;
+                case "Cortex Baker CPS Mult":
+                    CPSMult.CortexBakerCPSMult=num.doubleValue();
+                    break;
+                case "You CPS Mult":
+                    CPSMult.YouCPSMult=num.doubleValue();
+                    break;
+                case "Base CPS Mult":
+                    CPSMult.BaseCPSMult=num.doubleValue();
                     break;
                 default:
                     break;

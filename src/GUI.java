@@ -19,12 +19,16 @@ public class GUI implements ActionListener {
 
     //Logic Stuff
     Buildings BuildingLogic = new Buildings();
-    Logic GameLogic = new Logic(BuildingLogic);
+    Logic GameLogic;
+    Upgrades Upgradelogic = new Upgrades();
     File save = new File("save.txt");
     boolean CookiesOn=false;
 
 
+
     //Buttons
+    JButton StatsButton;
+    JButton RebirthButton;
     JButton SaveGameButton;
     JButton LoadGameButton;
     JButton cookieButton;
@@ -76,6 +80,22 @@ public class GUI implements ActionListener {
             AutoPWR.setText("CPS: " + BuildingLogic.getCookiesPerSecond());
             CursorButton.setText("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
             GrandmaButton.setText("Upgrade (+1 CPS) | Cost: "+ BuildingLogic.getGrandmaCost()+" Cookies | Owned: "+ BuildingLogic.getGrandmaPurchases());
+            FarmButton.setText("Upgrade (+8 CPS) | Cost: "+ BuildingLogic.getFarmCost()+" Cookies | Owned: "+ BuildingLogic.getFarmPurchases());
+            MineButton.setText("Upgrade (+47 CPS) | Cost: "+ BuildingLogic.getMineCost()+" Cookies | Owned: "+ BuildingLogic.getMinePurchases());
+            FactoryButton.setText("Upgrade (+260 CPS) | Cost: "+ BuildingLogic.getFactoryCost()+" Cookies | Owned: "+ BuildingLogic.getFactoryPurchases());
+            BankButton.setText("Upgrade (+1400 CPS) | Cost: "+ BuildingLogic.getBankCost()+" Cookies | Owned: "+ BuildingLogic.getBankPurchases());
+            TempleButton.setText("Upgrade (+7800 CPS) | Cost: "+ BuildingLogic.getTempleCost()+" Cookies | Owned: "+ BuildingLogic.getTemplePurchases());
+            WizardTowerButton.setText("Upgrade (+44000 CPS) | Cost: "+ BuildingLogic.getWizardTowerCost()+" Cookies | Owned: "+ BuildingLogic.getWizardTowerPurchases());
+            ShipmentButton.setText("Upgrade (+260000 CPS) | Cost: "+ BuildingLogic.getShipmentCost()+" Cookies | Owned: "+ BuildingLogic.getShipmentPurchases());
+            AlchemyLabButton.setText("Upgrade (+1600000 CPS) | Cost: "+ BuildingLogic.getAlchemyLabCost()+" Cookies | Owned: "+ BuildingLogic.getAlchemyLabPurchases());
+            PortalButton.setText("Upgrade (+10000000 CPS) | Cost: "+ BuildingLogic.getPortalCost()+" Cookies | Owned: "+ BuildingLogic.getPortalPurchases());
+            TimeMachineButton.setText("Upgrade (+65000000 CPS) | Cost: "+ BuildingLogic.getTimeMachineCost()+" Cookies | Owned: "+ BuildingLogic.getTimeMachinePurchases());
+            AntimatterCondenserButton.setText("Antimatter Condenser (+430000000 CPS) | Cost: "+ BuildingLogic.getAntimatterCondenserCost()+" Cookies | Owned: "+ BuildingLogic.getAntimatterCondenserPurchases());
+            PrismButton.setText("Prism (+2900000000 CPS) | Cost: "+ BuildingLogic.getPrismCost()+" Cookies | Owned: "+ BuildingLogic.getPrismPurchases());
+            ChancemakerButton.setText("Chancemaker (+21000000000 CPS) | Cost: "+ BuildingLogic.getChancemakerCost()+" Cookies | Owned: "+ BuildingLogic.getChancemakerPurchases());
+            FractalEngineButton.setText("Fractal Engine (+150000000000 CPS) | Cost: "+ BuildingLogic.getFractalEngineCost()+" Cookies | Owned: "+ BuildingLogic.getFractalEnginePurchases());
+            JavaConsoleButton.setText("Java Console (+1100000000000 CPS) | Cost: "+ BuildingLogic.getJavaConsoleCost()+" Cookies | Owned: "+ BuildingLogic.getJavaConsolePurchases());
+            IdleverseButton.setText("Idleverse (+8300000000000 CPS) | Cost: "+ BuildingLogic.getIdleverseCost()+" Cookies | Owned: "+ BuildingLogic.getIdleversePurchases());
             if(BuildingLogic.getCookiesPerSecond().compareTo(BigDecimal.valueOf(0))>0&&!CookiesOn){
                 BuildingLogic.AutoTimer();
                 CookiesOn=true;
@@ -84,10 +104,38 @@ public class GUI implements ActionListener {
         updateTimer = new Timer(500,guiUpdate);
         updateTimer.start();
 
-        //Save/Load Button Creation
+        //Save/Load & Stats + Rebirth Button Creation
+        StatsButton = new JButton("Stats");
+        StatsButton.addActionListener(_ -> {
+            JOptionPane.showMessageDialog(frame,
+                "Cursor CPS Mult:"+Upgradelogic.getCursorCPSMult()+"\n"
+                        +"Grandma CPS Mult:"+Upgradelogic.getGrandmaCPSMult()+"\n"
+                        +"Farm CPS Mult:"+Upgradelogic.getFarmCPSMult()+"\n"
+                        +"Mine CPS Mult:"+Upgradelogic.getMineCPSMult()+"\n"
+                        +"Factory CPS Mult:"+Upgradelogic.getFactoryCPSMult()+"\n"
+                        +"Bank CPS Mult:"+Upgradelogic.getBankCPSMult()+"\n"
+                        +"Temple CPS Mult:"+Upgradelogic.getTempleCPSMult()+"\n"
+                        +"Wizard Tower CPS Mult:"+Upgradelogic.getWizardTowerCPSMult()+"\n"
+                        +"Shipment CPS Mult:"+Upgradelogic.getShipmentCPSMult()+"\n"
+                        +"Alchemy Lab CPS Mult:"+Upgradelogic.getAlchemyLabCPSMult()+"\n"
+                        +"Portal CPS Mult:"+Upgradelogic.getPortalCPSMult()+"\n"
+                        +"Time Machine CPS Mult:"+Upgradelogic.getTimeMachineCPSMult()+"\n"
+                        +"Antimatter Condenser CPS Mult:"+Upgradelogic.getAntimatterCondenserCPSMult()+"\n"
+                        +"Prism CPS Mult:"+Upgradelogic.getPrismCPSMult()+"\n"
+                        +"Chancemaker CPS Mult:"+Upgradelogic.getChancemakerCPSMult()+"\n"
+                        +"Fractal Engine CPS Mult:"+Upgradelogic.getFractalEngineCPSMult()+"\n"
+                        +"Java Console CPS Mult:"+Upgradelogic.getJavaConsoleCPSMult()+"\n"
+                        +"Idleverse CPS Mult:"+Upgradelogic.getIdleverseCPSMult()+"\n"
+                        +"Cortex Baker CPS Mult:"+Upgradelogic.getCortexBakerCPSMult()+"\n"
+                        +"You CPS Mult:"+Upgradelogic.getYouCPSMult()+"\n"
+                        +"Base CPS Mult:"+Upgradelogic.getBaseCPSMult()+"\n"
+        );
+        });
+        RebirthButton = new JButton("Rebirth");
         SaveGameButton = new JButton("Save Game");
         Object[] SaveOptions = {"Yes, please",
                 "No, thanks",};
+
         SaveGameButton.addActionListener(_ ->{
             int SaveChoice=JOptionPane.showOptionDialog(frame,
                     "Would you like to save your current game data?",
@@ -421,6 +469,8 @@ public class GUI implements ActionListener {
         //Panel Packing
         OptionsPanel.add(SaveGameButton);
         OptionsPanel.add(LoadGameButton);
+        OptionsPanel.add(StatsButton);
+        OptionsPanel.add(RebirthButton);
         CookiePanel.add(cookieButton);
         BuildingPanel.add(CursorButton);
         BuildingPanel.add(GrandmaButton);
