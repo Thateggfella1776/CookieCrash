@@ -1,4 +1,11 @@
 class Upgrades {
+
+    Buildings BuildingLogic;
+
+    public Upgrades(Buildings buildings) {
+        this.BuildingLogic = buildings;
+    }
+
     double BaseCPSMult=1.0;
     double CursorCPSMult=1.0;
     double GrandmaCPSMult=1.0;
@@ -43,5 +50,57 @@ class Upgrades {
     public double getIdleverseCPSMult() {return IdleverseCPSMult;}
     public double getCortexBakerCPSMult() {return CortexBakerCPSMult;}
     public double getYouCPSMult() {return YouCPSMult;}
+
+
+    //Switch Case For Building Upgrades
+    public void CursorUpgrade(){
+        switch (BuildingLogic.getCursorPurchases()) {
+            case 1:
+                CursorCPSMult=2.0;
+                break;
+            case 10:
+                CursorCPSMult=1.1;
+                break;
+            case 25:
+                CursorCPSMult=1.2;
+                break;
+            case 50:
+                CursorCPSMult=1.3;
+                break;
+            case 100:
+                CursorCPSMult=1.4;
+                break;
+            case 150:
+                CursorCPSMult=1.5;
+                break;
+            case 200:
+                CursorCPSMult=1.6;
+                break;
+            case 250:
+                CursorCPSMult=1.7;
+                break;
+            case 300:
+                CursorCPSMult=1.8;
+                break;
+            case 350:
+                CursorCPSMult=1.9;
+                break;
+            case 400:
+                CursorCPSMult=2.0;
+                break;
+            case 450:
+                CursorCPSMult=2.1;
+                break;
+            case 500:
+                CursorCPSMult=2.2;
+                break;
+            case 550:
+                CursorCPSMult=2.3;
+                break;
+            default:
+                break;
+        }
+    }
+
 
 }

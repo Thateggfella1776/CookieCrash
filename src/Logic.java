@@ -207,7 +207,6 @@ public class Logic {
                 default:
                     break;
             }
-            System.out.println(identifier+":"+num);
             test = LoadReader.nextLine();
             identifier=test.split(":")[0];
         }

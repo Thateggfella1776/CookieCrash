@@ -19,14 +19,15 @@ public class GUI implements ActionListener {
 
     //Logic Stuff
     Buildings BuildingLogic = new Buildings();
+    Upgrades Upgradelogic = new Upgrades(BuildingLogic);
     Logic GameLogic;
-    Upgrades Upgradelogic = new Upgrades();
     File save = new File("save.txt");
     boolean CookiesOn=false;
 
 
 
     //Buttons
+    Dimension ButtonSize = new Dimension(1000,30);
     JButton StatsButton;
     JButton RebirthButton;
     JButton SaveGameButton;
@@ -53,9 +54,11 @@ public class GUI implements ActionListener {
     JButton CortexBakerButton;
     JButton YouButton;
 
+
     //Panels
     JPanel MegaPanel = new JPanel();
     JPanel UpgradesBuildings;
+    JPanel UpgradesPanel;
     JPanel OptionsPanel;
     JPanel CookiePanel;
     JPanel BuildingPanel;
@@ -77,7 +80,7 @@ public class GUI implements ActionListener {
         //Refresh Timer Creation
         guiUpdate = _ -> {
             ClickPWR.setText("CPC: "+ BuildingLogic.getCookiesPerClick());
-            CurrentCookies.setText("Cookies: "+ BuildingLogic.getCookieCount());
+            CurrentCookies.setText("Cookies: " + BuildingLogic.getCookieCount().stripTrailingZeros().toPlainString());
             AutoPWR.setText("CPS: " + BuildingLogic.getCookiesPerSecond());
             CursorButton.setText("Cursor (+0.1 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
             GrandmaButton.setText("Grandma (+1 CPS) | Cost: "+ BuildingLogic.getGrandmaCost()+" Cookies | Owned: "+ BuildingLogic.getGrandmaPurchases());
@@ -97,6 +100,7 @@ public class GUI implements ActionListener {
             FractalEngineButton.setText("Fractal Engine (+150000000000 CPS) | Cost: "+ BuildingLogic.getFractalEngineCost()+" Cookies | Owned: "+ BuildingLogic.getFractalEnginePurchases());
             JavaConsoleButton.setText("Java Console (+1100000000000 CPS) | Cost: "+ BuildingLogic.getJavaConsoleCost()+" Cookies | Owned: "+ BuildingLogic.getJavaConsolePurchases());
             IdleverseButton.setText("Idleverse (+8300000000000 CPS) | Cost: "+ BuildingLogic.getIdleverseCost()+" Cookies | Owned: "+ BuildingLogic.getIdleversePurchases());
+            Upgradelogic.CursorUpgrade();
             if(BuildingLogic.getCookiesPerSecond().compareTo(BigDecimal.valueOf(0))>0&&!CookiesOn){
                 BuildingLogic.AutoTimer();
                 CookiesOn=true;
@@ -215,7 +219,7 @@ public class GUI implements ActionListener {
         cookieButton.setPreferredSize(new Dimension(512,512));
         cookieButton.addActionListener(_ -> {
             BuildingLogic.Click();
-            CurrentCookies.setText("Cookies: "+ BuildingLogic.getCookieCount());
+            CurrentCookies.setText("Cookies: " + BuildingLogic.getCookieCount().stripTrailingZeros().toPlainString());
         });
 
         //Upgrade Buttons
@@ -230,6 +234,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE); //Source: https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html
             }
         });
+        CursorButton.setPreferredSize(ButtonSize);
+        CursorButton.setMinimumSize(ButtonSize);
+        CursorButton.setMaximumSize(ButtonSize);
         GrandmaButton = new JButton("Grandma (+1 CPS) | Cost: "+ BuildingLogic.getGrandmaCost()+" Cookies | Owned: "+ BuildingLogic.getGrandmaPurchases());
         GrandmaButton.addActionListener(_ -> {
             if(BuildingLogic.buyGrandma()){
@@ -241,6 +248,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        GrandmaButton.setPreferredSize(ButtonSize);
+        GrandmaButton.setMinimumSize(ButtonSize);
+        GrandmaButton.setMaximumSize(ButtonSize);
         FarmButton = new JButton("Farm (+8 CPS) | Cost: "+ BuildingLogic.getFarmCost()+" Cookies | Owned: "+ BuildingLogic.getFarmPurchases());
         FarmButton.addActionListener(_ -> {
             if(BuildingLogic.buyFarm()){
@@ -252,6 +262,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        FarmButton.setPreferredSize(ButtonSize);
+        FarmButton.setMinimumSize(ButtonSize);
+        FarmButton.setMaximumSize(ButtonSize);
         MineButton = new JButton("Mine (+47 CPS) | Cost: "+ BuildingLogic.getMineCost()+" Cookies | Owned: "+ BuildingLogic.getMinePurchases());
         MineButton.addActionListener(_ -> {
             if(BuildingLogic.buyMine()){
@@ -263,6 +276,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        MineButton.setPreferredSize(ButtonSize);
+        MineButton.setMinimumSize(ButtonSize);
+        MineButton.setMaximumSize(ButtonSize);
         FactoryButton = new JButton("Factory (+260 CPS) | Cost: "+ BuildingLogic.getFactoryCost()+" Cookies | Owned: "+ BuildingLogic.getFactoryPurchases());
         FactoryButton.addActionListener(_ -> {
             if(BuildingLogic.buyFactory()){
@@ -274,6 +290,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        FactoryButton.setPreferredSize(ButtonSize);
+        FactoryButton.setMinimumSize(ButtonSize);
+        FactoryButton.setMaximumSize(ButtonSize);
         BankButton = new JButton("Bank (+1400 CPS) | Cost: "+ BuildingLogic.getBankCost()+" Cookies | Owned: "+ BuildingLogic.getBankPurchases());
         BankButton.addActionListener(_ -> {
             if(BuildingLogic.buyBank()){
@@ -285,6 +304,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        BankButton.setPreferredSize(ButtonSize);
+        BankButton.setMinimumSize(ButtonSize);
+        BankButton.setMaximumSize(ButtonSize);
         TempleButton = new JButton("Temple (+7800 CPS) | Cost: "+ BuildingLogic.getTempleCost()+" Cookies | Owned: "+ BuildingLogic.getTemplePurchases());
         TempleButton.addActionListener(_ -> {
             if(BuildingLogic.buyTemple()){
@@ -296,6 +318,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        TempleButton.setPreferredSize(ButtonSize);
+        TempleButton.setMinimumSize(ButtonSize);
+        TempleButton.setMaximumSize(ButtonSize);
         WizardTowerButton = new JButton("Wizard Tower (+44000 CPS) | Cost: "+ BuildingLogic.getWizardTowerCost()+" Cookies | Owned: "+ BuildingLogic.getWizardTowerPurchases());
         WizardTowerButton.addActionListener(_ -> {
             if(BuildingLogic.buyWizardTower()){
@@ -307,6 +332,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        WizardTowerButton.setPreferredSize(ButtonSize);
+        WizardTowerButton.setMinimumSize(ButtonSize);
+        WizardTowerButton.setMaximumSize(ButtonSize);
         ShipmentButton = new JButton("Shipment (+260000 CPS) | Cost: "+ BuildingLogic.getShipmentCost()+" Cookies | Owned: "+ BuildingLogic.getShipmentPurchases());
         ShipmentButton.addActionListener(_ -> {
             if(BuildingLogic.buyShipment()){
@@ -318,6 +346,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        ShipmentButton.setPreferredSize(ButtonSize);
+        ShipmentButton.setMinimumSize(ButtonSize);
+        ShipmentButton.setMaximumSize(ButtonSize);
         AlchemyLabButton = new JButton("Alchemy Lab (+1600000 CPS) | Cost: "+ BuildingLogic.getAlchemyLabCost()+" Cookies | Owned: "+ BuildingLogic.getAlchemyLabPurchases());
         AlchemyLabButton.addActionListener(_ -> {
             if(BuildingLogic.buyAlchemyLab()){
@@ -329,6 +360,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        AlchemyLabButton.setPreferredSize(ButtonSize);
+        AlchemyLabButton.setMinimumSize(ButtonSize);
+        AlchemyLabButton.setMaximumSize(ButtonSize);
         PortalButton = new JButton("Portal (+10000000 CPS) | Cost: "+ BuildingLogic.getPortalCost()+" Cookies | Owned: "+ BuildingLogic.getPortalPurchases());
         PortalButton.addActionListener(_ -> {
             if(BuildingLogic.buyPortal()){
@@ -340,6 +374,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        PortalButton.setPreferredSize(ButtonSize);
+        PortalButton.setMinimumSize(ButtonSize);
+        PortalButton.setMaximumSize(ButtonSize);
         TimeMachineButton = new JButton("Time Machine (+65000000 CPS) | Cost: "+ BuildingLogic.getTimeMachineCost()+" Cookies | Owned: "+ BuildingLogic.getTimeMachinePurchases());
         TimeMachineButton.addActionListener(_ -> {
             if(BuildingLogic.buyTimeMachine()){
@@ -351,6 +388,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        TimeMachineButton.setPreferredSize(ButtonSize);
+        TimeMachineButton.setMinimumSize(ButtonSize);
+        TimeMachineButton.setMaximumSize(ButtonSize);
         AntimatterCondenserButton = new JButton("Antimatter Condenser (+430000000 CPS) | Cost: "+ BuildingLogic.getAntimatterCondenserCost()+" Cookies | Owned: "+ BuildingLogic.getAntimatterCondenserPurchases());
         AntimatterCondenserButton.addActionListener(_ -> {
             if(BuildingLogic.buyAntimatterCondenser()){
@@ -362,6 +402,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        AntimatterCondenserButton.setPreferredSize(ButtonSize);
+        AntimatterCondenserButton.setMinimumSize(ButtonSize);
+        AntimatterCondenserButton.setMaximumSize(ButtonSize);
         PrismButton = new JButton("Prism (+2900000000 CPS) | Cost: "+ BuildingLogic.getPrismCost()+" Cookies | Owned: "+ BuildingLogic.getPrismPurchases());
         PrismButton.addActionListener(_ -> {
             if(BuildingLogic.buyPrism()){
@@ -373,6 +416,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        PrismButton.setPreferredSize(ButtonSize);
+        PrismButton.setMinimumSize(ButtonSize);
+        PrismButton.setMaximumSize(ButtonSize);
         ChancemakerButton = new JButton("Chancemaker (+21000000000 CPS) | Cost: "+ BuildingLogic.getChancemakerCost()+" Cookies | Owned: "+ BuildingLogic.getChancemakerPurchases());
         ChancemakerButton.addActionListener(_ -> {
             if(BuildingLogic.buyChancemaker()){
@@ -384,6 +430,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        ChancemakerButton.setPreferredSize(ButtonSize);
+        ChancemakerButton.setMinimumSize(ButtonSize);
+        ChancemakerButton.setMaximumSize(ButtonSize);
         FractalEngineButton = new JButton("Fractal Engine (+150000000000 CPS) | Cost: "+ BuildingLogic.getFractalEngineCost()+" Cookies | Owned: "+ BuildingLogic.getFractalEnginePurchases());
         FractalEngineButton.addActionListener(_ -> {
             if(BuildingLogic.buyFractalEngine()){
@@ -395,6 +444,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        FractalEngineButton.setPreferredSize(ButtonSize);
+        FractalEngineButton.setMinimumSize(ButtonSize);
+        FractalEngineButton.setMaximumSize(ButtonSize);
         JavaConsoleButton = new JButton("Java Console (+1100000000000 CPS) | Cost: "+ BuildingLogic.getJavaConsoleCost()+" Cookies | Owned: "+ BuildingLogic.getJavaConsolePurchases());
         JavaConsoleButton.addActionListener(_ -> {
             if(BuildingLogic.buyJavaConsole()){
@@ -406,6 +458,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        JavaConsoleButton.setPreferredSize(ButtonSize);
+        JavaConsoleButton.setMinimumSize(ButtonSize);
+        JavaConsoleButton.setMaximumSize(ButtonSize);
         IdleverseButton = new JButton("Idleverse (+8300000000000 CPS) | Cost: "+ BuildingLogic.getIdleverseCost()+" Cookies | Owned: "+ BuildingLogic.getIdleversePurchases());
         IdleverseButton.addActionListener(_ -> {
             if(BuildingLogic.buyIdleverse()){
@@ -417,6 +472,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        IdleverseButton.setPreferredSize(ButtonSize);
+        IdleverseButton.setMinimumSize(ButtonSize);
+        IdleverseButton.setMaximumSize(ButtonSize);
         CortexBakerButton = new JButton("Cortex Baker (+64000000000000 CPS) | Cost: "+ BuildingLogic.getCortexBakerCost()+" Cookies | Owned: "+ BuildingLogic.getCortexBakerPurchases());
         CortexBakerButton.addActionListener(_ -> {
             if(BuildingLogic.buyCortexBaker()){
@@ -428,6 +486,9 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        CortexBakerButton.setPreferredSize(ButtonSize);
+        CortexBakerButton.setMinimumSize(ButtonSize);
+        CortexBakerButton.setMaximumSize(ButtonSize);
         YouButton = new JButton("You (+500000000000000 CPS) | Cost: "+ BuildingLogic.getYouCost()+" Cookies | Owned: "+ BuildingLogic.getYouPurchases());
         YouButton.addActionListener(_ -> {
             if(BuildingLogic.buyYou()){
@@ -439,13 +500,17 @@ public class GUI implements ActionListener {
                         JOptionPane.WARNING_MESSAGE);
             }
         });
+        YouButton.setPreferredSize(ButtonSize);
+        YouButton.setMinimumSize(ButtonSize);
+        YouButton.setMaximumSize(ButtonSize);
 
 
         //Frame Creation
+
         frame = new JFrame("COOKIE CRASH!");
 
         //Label Creation
-        CurrentCookies = new JLabel("Cookies: "+ BuildingLogic.getCookieCount());
+        CurrentCookies = new JLabel("Cookies: " + BuildingLogic.getCookieCount().stripTrailingZeros().toPlainString());
         ClickPWR = new JLabel("CPC: "+ BuildingLogic.getCookiesPerClick());
         AutoPWR = new JLabel("CPS: " + BuildingLogic.getCookiesPerSecond());
 
@@ -454,6 +519,7 @@ public class GUI implements ActionListener {
         OptionsPanel = new JPanel();
         CookiePanel = new JPanel();
         BuildingPanel = new JPanel();
+        UpgradesPanel = new JPanel();
         BuildingPanel.setLayout(new GridLayout(20,0));
         StatsPanel = new JPanel();
         MegaPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -466,6 +532,7 @@ public class GUI implements ActionListener {
         BuildingPanel.setBackground(myColor);
         OptionsPanel.setBackground(myColor);
         UpgradesBuildings.setBackground(myColor);
+        UpgradesPanel.setBackground(myColor);
 
         //Panel Packing
         OptionsPanel.add(SaveGameButton);
@@ -493,6 +560,7 @@ public class GUI implements ActionListener {
         BuildingPanel.add(IdleverseButton);
         BuildingPanel.add(CortexBakerButton);
         BuildingPanel.add(YouButton);
+        UpgradesBuildings.add(UpgradesPanel, BorderLayout.NORTH);
         UpgradesBuildings.add(BuildingPanel, BorderLayout.SOUTH);
         StatsPanel.add(CurrentCookies);
         StatsPanel.add(ClickPWR);

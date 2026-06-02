@@ -10,7 +10,7 @@ public class Buildings {
     BigDecimal cookieCount = new BigDecimal ("0.0");
     BigDecimal CookiesPerClick = new BigDecimal("1.0");
     BigDecimal CookiesPerSecond = new BigDecimal("0.0");
-    Upgrades CPSMults = new Upgrades();
+    Upgrades CPSMults = new Upgrades(this);;
     int CursorPurchases = 0;
     int CursorBaseCost = 15;
     int GrandmaPurchases = 0;
