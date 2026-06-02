@@ -43,4 +43,5 @@ class Upgrades {
     public double getIdleverseCPSMult() {return IdleverseCPSMult;}
     public double getCortexBakerCPSMult() {return CortexBakerCPSMult;}
     public double getYouCPSMult() {return YouCPSMult;}
+
 }

@@ -72,24 +72,25 @@ public class GUI implements ActionListener {
 
 
     public GUI() {
+        GameLogic = new Logic(BuildingLogic, Upgradelogic);
 
         //Refresh Timer Creation
         guiUpdate = _ -> {
             ClickPWR.setText("CPC: "+ BuildingLogic.getCookiesPerClick());
             CurrentCookies.setText("Cookies: "+ BuildingLogic.getCookieCount());
             AutoPWR.setText("CPS: " + BuildingLogic.getCookiesPerSecond());
-            CursorButton.setText("Upgrade (+0.5 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
-            GrandmaButton.setText("Upgrade (+1 CPS) | Cost: "+ BuildingLogic.getGrandmaCost()+" Cookies | Owned: "+ BuildingLogic.getGrandmaPurchases());
-            FarmButton.setText("Upgrade (+8 CPS) | Cost: "+ BuildingLogic.getFarmCost()+" Cookies | Owned: "+ BuildingLogic.getFarmPurchases());
-            MineButton.setText("Upgrade (+47 CPS) | Cost: "+ BuildingLogic.getMineCost()+" Cookies | Owned: "+ BuildingLogic.getMinePurchases());
-            FactoryButton.setText("Upgrade (+260 CPS) | Cost: "+ BuildingLogic.getFactoryCost()+" Cookies | Owned: "+ BuildingLogic.getFactoryPurchases());
-            BankButton.setText("Upgrade (+1400 CPS) | Cost: "+ BuildingLogic.getBankCost()+" Cookies | Owned: "+ BuildingLogic.getBankPurchases());
-            TempleButton.setText("Upgrade (+7800 CPS) | Cost: "+ BuildingLogic.getTempleCost()+" Cookies | Owned: "+ BuildingLogic.getTemplePurchases());
-            WizardTowerButton.setText("Upgrade (+44000 CPS) | Cost: "+ BuildingLogic.getWizardTowerCost()+" Cookies | Owned: "+ BuildingLogic.getWizardTowerPurchases());
-            ShipmentButton.setText("Upgrade (+260000 CPS) | Cost: "+ BuildingLogic.getShipmentCost()+" Cookies | Owned: "+ BuildingLogic.getShipmentPurchases());
-            AlchemyLabButton.setText("Upgrade (+1600000 CPS) | Cost: "+ BuildingLogic.getAlchemyLabCost()+" Cookies | Owned: "+ BuildingLogic.getAlchemyLabPurchases());
-            PortalButton.setText("Upgrade (+10000000 CPS) | Cost: "+ BuildingLogic.getPortalCost()+" Cookies | Owned: "+ BuildingLogic.getPortalPurchases());
-            TimeMachineButton.setText("Upgrade (+65000000 CPS) | Cost: "+ BuildingLogic.getTimeMachineCost()+" Cookies | Owned: "+ BuildingLogic.getTimeMachinePurchases());
+            CursorButton.setText("Cursor (+0.1 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
+            GrandmaButton.setText("Grandma (+1 CPS) | Cost: "+ BuildingLogic.getGrandmaCost()+" Cookies | Owned: "+ BuildingLogic.getGrandmaPurchases());
+            FarmButton.setText("Farm (+8 CPS) | Cost: "+ BuildingLogic.getFarmCost()+" Cookies | Owned: "+ BuildingLogic.getFarmPurchases());
+            MineButton.setText("Mine (+47 CPS) | Cost: "+ BuildingLogic.getMineCost()+" Cookies | Owned: "+ BuildingLogic.getMinePurchases());
+            FactoryButton.setText("Factory (+260 CPS) | Cost: "+ BuildingLogic.getFactoryCost()+" Cookies | Owned: "+ BuildingLogic.getFactoryPurchases());
+            BankButton.setText("Bank (+1400 CPS) | Cost: "+ BuildingLogic.getBankCost()+" Cookies | Owned: "+ BuildingLogic.getBankPurchases());
+            TempleButton.setText("Temple (+7800 CPS) | Cost: "+ BuildingLogic.getTempleCost()+" Cookies | Owned: "+ BuildingLogic.getTemplePurchases());
+            WizardTowerButton.setText("Wizard Tower (+44000 CPS) | Cost: "+ BuildingLogic.getWizardTowerCost()+" Cookies | Owned: "+ BuildingLogic.getWizardTowerPurchases());
+            ShipmentButton.setText("Shipment (+260000 CPS) | Cost: "+ BuildingLogic.getShipmentCost()+" Cookies | Owned: "+ BuildingLogic.getShipmentPurchases());
+            AlchemyLabButton.setText("Alchemy Lab (+1600000 CPS) | Cost: "+ BuildingLogic.getAlchemyLabCost()+" Cookies | Owned: "+ BuildingLogic.getAlchemyLabPurchases());
+            PortalButton.setText("Portal (+10000000 CPS) | Cost: "+ BuildingLogic.getPortalCost()+" Cookies | Owned: "+ BuildingLogic.getPortalPurchases());
+            TimeMachineButton.setText("Time Machine (+65000000 CPS) | Cost: "+ BuildingLogic.getTimeMachineCost()+" Cookies | Owned: "+ BuildingLogic.getTimeMachinePurchases());
             AntimatterCondenserButton.setText("Antimatter Condenser (+430000000 CPS) | Cost: "+ BuildingLogic.getAntimatterCondenserCost()+" Cookies | Owned: "+ BuildingLogic.getAntimatterCondenserPurchases());
             PrismButton.setText("Prism (+2900000000 CPS) | Cost: "+ BuildingLogic.getPrismCost()+" Cookies | Owned: "+ BuildingLogic.getPrismPurchases());
             ChancemakerButton.setText("Chancemaker (+21000000000 CPS) | Cost: "+ BuildingLogic.getChancemakerCost()+" Cookies | Owned: "+ BuildingLogic.getChancemakerPurchases());
@@ -218,10 +219,10 @@ public class GUI implements ActionListener {
         });
 
         //Upgrade Buttons
-        CursorButton = new JButton("Cursor (+0.5 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
+        CursorButton = new JButton("Cursor (+0.1 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
         CursorButton.addActionListener(_ -> {
             if(BuildingLogic.buyCursor()){
-                CursorButton.setText("Cursor (+0.5 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
+                CursorButton.setText("Cursor (+0.1 CPS) | Cost: "+ BuildingLogic.getCursorCost()+" Cookies | Owned: "+ BuildingLogic.getCursorPurchases());
             }else{
                 JOptionPane.showMessageDialog(frame,
                         "Not enough cookies! You need " + BuildingLogic.getCursorCost() + " cookies.",

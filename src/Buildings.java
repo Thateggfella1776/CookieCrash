@@ -102,7 +102,7 @@ public class Buildings {
         if(cookieCount.compareTo(BigDecimal.valueOf(cost))>=0){
             cookieCount=cookieCount.subtract(BigDecimal.valueOf(cost));
             CursorPurchases++;
-            CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(0.5).multiply(BigDecimal.valueOf(CPSMults.getCursorCPSMult())));
+            CookiesPerSecond=CookiesPerSecond.add(BigDecimal.valueOf(0.1).multiply(BigDecimal.valueOf(CPSMults.getCursorCPSMult())));
             return true;
         }
         return false;

@@ -14,6 +14,7 @@
       <change beforePath="$PROJECT_DIR$/src/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Upgrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Upgrades.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +148,7 @@
       <workItem from="1779477872891" duration="16000" />
       <workItem from="1779486402726" duration="10302000" />
       <workItem from="1779986880447" duration="10213000" />
-      <workItem from="1780331395203" duration="2829000" />
+      <workItem from="1780331395203" duration="6589000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed UI so its not so sloppy, added auto click upgrade, began creation of save/load components">
       <option name="closed" value="true" />
@@ -189,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780329752644</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Now working on my upgrade systems">
+      <option name="closed" value="true" />
+      <created>1780337995887</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780337995888</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +228,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI.java</url>
-          <line>471</line>
+          <line>472</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
