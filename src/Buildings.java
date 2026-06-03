@@ -399,6 +399,7 @@ public class Buildings {
         }
         return false;
     }
+
     public void CPSpostLoad() {
         CursorCPS = BigDecimal.valueOf(CursorPurchases * 0.1);
         GrandmaCPS = BigDecimal.valueOf(GrandmaPurchases);

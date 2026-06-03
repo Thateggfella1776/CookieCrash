@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="more upgrade fixes and updates">
+    <list default="true" id="5d1f94ba-4318-4ba6-95f3-e6ebfb9ba287" name="Changes" comment="more upgrade fixing bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buildings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Upgrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Upgrades.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780158239683</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="more upgrade fixing bugs">
+      <option name="closed" value="true" />
+      <created>1780463878482</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1780463878482</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +237,28 @@
     <MESSAGE value="Fixed some errors with upgrade 17-20 and renamed them all" />
     <MESSAGE value="Renamed all upgrades and stuff" />
     <MESSAGE value="more upgrade fixes and updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="more upgrade fixes and updates" />
+    <MESSAGE value="more upgrade fixing bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="more upgrade fixing bugs" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI.java</url>
+          <line>473</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Upgrades.java</url>
+          <line>1337</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI.java</url>
+          <line>1222</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
