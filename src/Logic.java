@@ -210,5 +210,7 @@ public class Logic {
             test = LoadReader.nextLine();
             identifier=test.split(":")[0];
         }
+        LoadReader.close();
+        BuildingLogic.CPSpostLoad();
     }
 }
