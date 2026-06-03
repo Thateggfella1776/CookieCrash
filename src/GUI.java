@@ -27,7 +27,7 @@ public class GUI implements ActionListener {
 
 
     //Buttons
-    Dimension ButtonSize = new Dimension(1000,30);
+    Dimension ButtonSize = new Dimension(500,30);
     JButton StatsButton;
     JButton RebirthButton;
     JButton SaveGameButton;
@@ -75,10 +75,14 @@ public class GUI implements ActionListener {
 
 
     public GUI() {
+        BuildingLogic = new Buildings();
+        Upgradelogic = new Upgrades(BuildingLogic);
+        BuildingLogic.UpgradeLogic = Upgradelogic;
         GameLogic = new Logic(BuildingLogic, Upgradelogic);
 
         //Refresh Timer Creation
         guiUpdate = _ -> {
+            CursorUpgradeCheck();
             ClickPWR.setText("CPC: "+ BuildingLogic.getCookiesPerClick());
             CurrentCookies.setText("Cookies: " + BuildingLogic.getCookieCount().stripTrailingZeros().toPlainString());
             AutoPWR.setText("CPS: " + BuildingLogic.getCookiesPerSecond());
@@ -515,7 +519,7 @@ public class GUI implements ActionListener {
         AutoPWR = new JLabel("CPS: " + BuildingLogic.getCookiesPerSecond());
 
         //Panel Creation
-        UpgradesBuildings = new JPanel();
+        UpgradesBuildings = new JPanel(new BorderLayout());
         OptionsPanel = new JPanel();
         CookiePanel = new JPanel();
         BuildingPanel = new JPanel();
@@ -560,8 +564,8 @@ public class GUI implements ActionListener {
         BuildingPanel.add(IdleverseButton);
         BuildingPanel.add(CortexBakerButton);
         BuildingPanel.add(YouButton);
-        UpgradesBuildings.add(UpgradesPanel, BorderLayout.NORTH);
-        UpgradesBuildings.add(BuildingPanel, BorderLayout.SOUTH);
+        UpgradesBuildings.add(UpgradesPanel,BorderLayout.NORTH);
+        UpgradesBuildings.add(BuildingPanel,BorderLayout.CENTER);
         StatsPanel.add(CurrentCookies);
         StatsPanel.add(ClickPWR);
         StatsPanel.add(AutoPWR);
@@ -576,6 +580,16 @@ public class GUI implements ActionListener {
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+    }
+
+    //Upgrade check logic
+    public void CursorUpgradeCheck(){
+        if(Upgradelogic.CursorU1&&!Upgradelogic.CU1Unlocked){
+            JButton CursorUpgrade1 = new JButton("PLEASE KILL ME!!!");
+            UpgradesPanel.add(CursorUpgrade1);
+            System.out.println("I will kill myself");
+            Upgradelogic.CU1Unlocked=true;
+        }
     }
 
     @Override

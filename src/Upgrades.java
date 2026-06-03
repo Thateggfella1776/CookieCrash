@@ -8,6 +8,34 @@ class Upgrades {
 
     double BaseCPSMult=1.0;
     double CursorCPSMult=1.0;
+    boolean CursorU1 = false;
+    boolean CU1Unlocked =false;
+    boolean CursorU2 = false;
+    boolean CU2Unlocked =false;
+    boolean CursorU3 = false;
+    boolean CU3Unlocked =false;
+    boolean CursorU4 = false;
+    boolean CU4Unlocked =false;
+    boolean CursorU5 = false;
+    boolean CU5Unlocked =false;
+    boolean CursorU6 = false;
+    boolean CU6Unlocked =false;
+    boolean CursorU7 = false;
+    boolean CU7Unlocked =false;
+    boolean CursorU8 = false;
+    boolean CU8Unlocked =false;
+    boolean CursorU9 = false;
+    boolean CU9Unlocked =false;
+    boolean CursorU10 = false;
+    boolean CU10Unlocked =false;
+    boolean CursorU11 = false;
+    boolean CU11Unlocked =false;
+    boolean CursorU12 = false;
+    boolean CU12Unlocked =false;
+    boolean CursorU13 = false;
+    boolean CU13Unlocked =false;
+    boolean CursorU14 = false;
+    boolean CU14Unlocked =false;
     double GrandmaCPSMult=1.0;
     double FarmCPSMult=1.0;
     double MineCPSMult=1.0;
@@ -56,46 +84,46 @@ class Upgrades {
     public void CursorUpgrade(){
         switch (BuildingLogic.getCursorPurchases()) {
             case 1:
-                CursorCPSMult=2.0;
+                CursorU1=true;
                 break;
             case 10:
-                CursorCPSMult=1.1;
+                CursorU2=true;
                 break;
             case 25:
-                CursorCPSMult=1.2;
+                CursorU3=true;
                 break;
             case 50:
-                CursorCPSMult=1.3;
+                CursorU4=true;
                 break;
             case 100:
-                CursorCPSMult=1.4;
+                CursorU5=true;
                 break;
             case 150:
-                CursorCPSMult=1.5;
+                CursorU6=true;
                 break;
             case 200:
-                CursorCPSMult=1.6;
+                CursorU7=true;
                 break;
             case 250:
-                CursorCPSMult=1.7;
+                CursorU8=true;
                 break;
             case 300:
-                CursorCPSMult=1.8;
+                CursorU9=true;
                 break;
             case 350:
-                CursorCPSMult=1.9;
+                CursorU10=true;
                 break;
             case 400:
-                CursorCPSMult=2.0;
+                CursorU11=true;
                 break;
             case 450:
-                CursorCPSMult=2.1;
+                CursorU12=true;
                 break;
             case 500:
-                CursorCPSMult=2.2;
+                CursorU13=true;
                 break;
             case 550:
-                CursorCPSMult=2.3;
+                CursorU14=true;
                 break;
             default:
                 break;
